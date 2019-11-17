@@ -1,0 +1,28 @@
+﻿@model tlogNew.Models.Microblog
+@{
+    ViewBag.Title = "Editor";
+}
+
+<h2>Editor</h2>
+
+@using (Html.BeginForm())
+{
+    <div >
+        <textarea style="height:70vh" name="text"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="Create" />
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.text)
+    </div>
+}
+
+
+
+
+@section Scripts
+{
+    <script src="~/Scripts/tinymce/tinymce.js"></script>
+    <script src="~/Scripts/main.js"></script>
+}

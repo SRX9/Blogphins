@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="jumbotron">
+    <nav style="margin-top:-2.7%; padding-left:15%;padding-right:15%;" 
+         class="sticky-top shadow-sm navbar navbar-expand-lg  navbar-light bg-light">
+        <a style="font-size:3vh" class="" href="/"><code>Your</code> <kbd>logs</kbd></a>
+        <div class="collapse navbar-collapse" style="padding-left:15px" id="navbarColor03">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button  class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </li>
+            </ul>
+            @if (Session["uid"] != null)
+            {
+                <button type="button" class="btn btn-secondary">
+                    Browse
+                </button>
+                <button style="font-weight:900;font-size:15px;color:#0f91e8" type="button" class="btn btn-link"
+                        onclick="location.href='@Url.Action("UserProfile", "UserAccount", new { uid = Session["uid"] })'">
+                    <b>@@@Session["uname"]</b>
+                </button>
+                <button type="button"
+                        onclick="location.href='@Url.Action("Logout", "UserAccount")'"
+                        class="btn btn-primary">
+                    Logout
+                </button>
+
+            }
+            else
+            {
+                <button type="button" class="btn btn-secondary">
+                    Browse
+                </button>
+                <button onclick="location.href='@Url.Action("Login", "UserAccount")'"
+                        type="button" class="btn btn-outline-primary ">
+                    Login
+                </button>
+
+                <button type="button"
+                        style="border:2.1px solid black"
+                        onclick="location.href='@Url.Action("Register", "UserAccount")'"
+                        class="btn btn-primary ">
+                    Create Account
+                </button>
+            }
+
+
+        </div>
+    </nav>
+        @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,92 @@
+﻿@{
+
+    ViewBag.Title = "Create MicroBlog";
+}
+
+<style>
+    .boxi {
+        box-shadow: 0 0 20px rgba(33,33,33,.2);
+    }
+</style>
+
+
+<div style="margin-bottom:-5.2%">
+    <div class="jumbotron bg-secondary container " >
+
+        <h2><code style="color:black">Create</code> <kbd>MicroBlog</kbd></h2>
+        <p>Maximum <b>250</b> Characters Allowed.</p>
+        <hr class="my-4">
+        @using (Html.BeginForm())
+        {
+
+
+            <div style="width:100%;">
+                <div style="display:inline-block;">
+                    <h4>Title for MicroBlog</h4>
+                    <input required maxlength="250" class="form-control"
+                           style="width:300%"
+                           name="title" type="text" placeholder="Write here">
+
+                </div>
+                <div style="display:inline-block;float:right">
+                    <h4 style="font-weight:900"># TagName</h4>
+                    <input class="form-control"
+                           required
+                           style=""
+                           placeholder="# Write Here"
+                           onkeyup="return forceLower(this);"
+                           type="text" onkeypress="return AvoidSpace(event,this)"
+                           name="tag" />
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div style="padding-top:5px;padding-right:15%;padding-left:15%">
+
+                <h3><img style="text-align:right" src="https://img.icons8.com/pastel-glyph/50/000000/ball-point-pen.png"></h3>
+                <div class="boxi">
+                    <textarea id="micro" name="text"></textarea>
+                </div>
+
+                <h5 class="text-danger">@ViewBag.error</h5>
+            </div>
+            <input type="hidden" name="uname" value="@Session["uname"]" />
+            <input type="hidden" name="uid" value="@Session["uid"]" />
+            <input type="hidden" name="time" value="@DateTime.Now.ToString()" />
+
+            <div style="text-align:right;padding-top:15px;">
+                <button type="submit" class="btn btn-primary ">
+                    Post
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                         width="32" height="32"
+                         viewBox="0 0 172 172"
+                         style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M10.07813,10.16211l20.24024,65.08789h130.93164zM30.31836,86l-20.24024,65.0459l151.17188,-65.0459z"></path></g></g></svg>
+                </button>
+            </div>
+
+
+        }
+
+    </div>
+
+    <div class=" bg-dark" style="padding:10px;text-align:right">
+        <div class="btn-group" role="group" >
+            <button type="button" class="btn btn-dark">About</button>
+            <button type="button" class="btn btn-dark">Privacy Policy</button>
+            <button type="button" class="btn btn-dark">Support</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function AvoidSpace(event, strInput) {
+        var k = event ? event.which : window.event.keyCode;
+        if (k == 32) return false;
+        strInput.value = strInput.value.toLowerCase();
+    }
+
+</script>
+<script src="~/Scripts/tinymce/tinymce.js"></script>
+<script src="~/Scripts/main.js"></script>

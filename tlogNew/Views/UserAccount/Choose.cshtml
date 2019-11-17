@@ -1,0 +1,40 @@
+﻿@model tlogNew.Models.Megablog
+@{
+    ViewBag.Title = "Write - tlogs";
+}
+
+<style>
+    .boxi {
+        transition: box-shadow .3s;
+        cursor: pointer;
+    }
+
+        .boxi:hover {
+            box-shadow: 0 0 50px rgba(33,33,33,.2);
+        }
+</style>
+
+
+
+<div class="jumbotron " style="overflow:hidden">
+    <h2 class="text-dark"><kbd>Choose</kbd> Blog Type</h2>
+    <hr />
+    <div style="text-align:center;">
+        <img width="auto"
+             onclick="location.href='@Url.Action("CreateMicroBlog", "UserAccount")'"
+             class="boxi" height="650px" style="padding:15px;"
+             src="@Url.Content("~/Content/images/micro.png")" alt="" />
+
+
+        <img width="auto" class="boxi" height="650px" style="padding:15px;"
+             onclick="location.href='@Url.Action("CreateMegaBlog", "UserAccount")'"
+             src="@Url.Content("~/Content/images/mega.png")" alt="" />
+
+    </div>
+    <hr />
+    <div style="">
+        <p>&copy; @DateTime.Now.Year - tlogs</p>
+    </div>
+</div>
+
+

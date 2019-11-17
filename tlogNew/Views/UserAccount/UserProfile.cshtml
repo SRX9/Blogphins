@@ -1,0 +1,51 @@
+﻿@model tlogNew.Models.Both
+@{
+    ViewBag.Title = @Model.user.bio+" - tlogs " ;
+}
+
+<div class="jumbotron container">
+    <div style="float:right;color:black;font-weight:800;cursor:pointer">
+        <img src="https://img.icons8.com/ios/30/000000/settings.png"> Settings
+    </div>
+
+    <h1 class="display-3">@Model.user.username</h1>
+    <div>
+        <span style="font-size:30px;color:black">
+            @Model.user.readers
+        </span>
+        <span class="lead">Monthly Readers</span>
+    </div>
+
+    <hr class="my-4">
+    <h5>Bio</h5>
+    <p>@Model.user.bio</p>
+    <hr class="my-4">
+    <div style="display:inline-block;border-right:1px solid #d4d4d4">
+        <blockquote style="padding-right:10px" class="blockquote text-center">
+            <h3>@Model.microblog.Count()</h3>
+            <footer class="">MicroBlogs</footer>
+        </blockquote>
+    </div>
+
+    <div style="display:inline-block">
+        <blockquote style="padding-left:10px" class="blockquote text-center">
+            <h3>@Model.megablog.Count()</h3>
+            <footer class="">MegaBlogs</footer>
+        </blockquote>
+    </div>
+    @if (Session["uid"].ToString()==Model.user.id.ToString())
+    {
+        <div style="float:right;padding:8px;">
+            <button onclick="location.href='@Url.Action("Choose", "UserAccount")'"
+                    type="button" class="btn btn-dark   ">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAA0ElEQVRIie3QoUqEQRQG0G/F5gpi8SkMgk1hfQOTwSaGfQOfQbAYTWIXtglGWVizL2LbYFGOwbu4QVH8B0XYm2buMOe7M8l/KuziHAet4VVc4tl77SfJUgs8yW2SjSS9uaPtrvZs8glOa3+MFzxhsxUOJ3P9G1zM9ss/xfP2LTvVOkOSrCdZS3LYZfIV3Pm47it8gS/wBf5XeA/jT/BJJ7wCBnjACI9N8Qq4wrDW163xPqbYwrBeMm6CV8BRTTytlwzQ+/rm9wP2KqTfDP2tegWW9TRiYMCcIQAAAABJRU5ErkJggg==">
+                Write
+            </button>
+        </div>
+    }
+
+
+</div>
+
+
+
