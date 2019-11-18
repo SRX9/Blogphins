@@ -110,27 +110,44 @@ namespace tlogNew.Controllers
 
 
 
+        //Whenver any error occurs due to user manually changes in url
+        public ActionResult Error()
+        {
+            return View();
+        }
+
+
+
         //User profile render
         public ActionResult UserProfile(int uid)
         { 
             using (Model1 db = new Model1())
-            {   
+            {
+                try
+                {
+                    User usr = db.user.FirstOrDefault(u => u.id == uid);
+                    if(usr==null)
+                    {
+                        return RedirectToAction("Error");
+                    }
+                    List<Microblog> microblog = db.microblog.Where(u => u.uid == uid).ToList();
+                    List<Megablog> megablog = db.megablog.Where(u => u.uid == uid).ToList();
+                    List<Save> save = db.save.Where(u => u.uid == uid).ToList();
 
-                User usr = db.user.FirstOrDefault(u=>u.id==uid);
+                    Both obj = new Both();
 
-                List<Microblog> microblog = db.microblog.Where(u => u.uid == uid).ToList();
-                List<Megablog> megablog = db.megablog.Where(u => u.uid == uid).ToList();
-                List<Save> save = db.save.Where(u => u.uid == uid).ToList();
+                    obj.user = usr;
+                    obj.microblog = microblog;
+                    obj.megablog = megablog;
+                    obj.save = save;
 
-                Both obj = new Both();
 
-                obj.user = usr;
-                obj.microblog = microblog;
-                obj.megablog = megablog;
-                obj.save = save;
-                
-
-                return View(obj);
+                    return View(obj);
+                }
+                catch(Exception e)
+                {
+                    return RedirectToAction("Error");
+                }
 
             }
      
@@ -308,5 +325,18 @@ namespace tlogNew.Controllers
         }
 
 
+        //Settings
+        public ActionResult Settings()
+        {
+            if(Session["uid"]!=null)
+            {
+
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
     }
 }

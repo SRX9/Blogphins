@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -28,7 +27,7 @@
                 </button>
                 <button style="font-weight:900;font-size:15px;color:#0f91e8" type="button" class="btn btn-link"
                         onclick="location.href='@Url.Action("UserProfile", "UserAccount", new { uid = Session["uid"] })'">
-                    <b>@@@Session["uname"]</b>
+                    <b class="text-lowercase">@Session["uname"]</b>
                 </button>
                 <button type="button"
                         onclick="location.href='@Url.Action("Logout", "UserAccount")'"

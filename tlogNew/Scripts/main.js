@@ -3,7 +3,6 @@
 tinymce.init({
     selector: '#micro',
     height: 400,
-    width:500,
     resize: false,
     plugins:'wordcount',
     toolbar: ' bold italic  underline strikethrough superscript subscript| fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | numlist bullist | forecolor backcolor | emoticons | preview | link codesample ',
@@ -39,7 +38,6 @@ tinymce.init({
         '//www.tiny.cloud/css/codepen.min.css'
     ],
     height: 800,
-    width:900,
     image_caption: true,
     quickbars_selection_toolbar: 'bold italic | quicklink h1 link h2 h3 blockquote quickimage quicktable',
     toolbar_drawer: 'sliding',
