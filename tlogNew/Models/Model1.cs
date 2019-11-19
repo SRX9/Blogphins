@@ -13,17 +13,14 @@ namespace tlogNew.Models
         // If you wish to target a different database and/or database provider, modify the 'Model1' 
         // connection string in the application configuration file.
         public Model1()
-            : base("name=Model1")
+            : base("name=Model12")
         {
         }
-
         public DbSet<User> user { get; set; }
         public DbSet<Microblog> microblog { get; set; }
         public DbSet<Megablog> megablog { get; set; }
         public DbSet<Tag> tag { get; set; }
         public DbSet<Category> category { get; set; }
-        public DbSet<Save> save { get; set; }
-
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 

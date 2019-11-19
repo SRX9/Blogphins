@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using tlogNew.Models;
@@ -119,12 +121,16 @@ namespace tlogNew.Controllers
 
 
         //User profile render
-        public ActionResult UserProfile(int uid)
+
+        public ActionResult UserProfile(int? uid)
         { 
+            if(!uid.HasValue)
+            {
+                return RedirectToAction("Login");
+            }
+           
             using (Model1 db = new Model1())
             {
-                try
-                {
                     User usr = db.user.FirstOrDefault(u => u.id == uid);
                     if(usr==null)
                     {
@@ -132,22 +138,15 @@ namespace tlogNew.Controllers
                     }
                     List<Microblog> microblog = db.microblog.Where(u => u.uid == uid).ToList();
                     List<Megablog> megablog = db.megablog.Where(u => u.uid == uid).ToList();
-                    List<Save> save = db.save.Where(u => u.uid == uid).ToList();
 
                     Both obj = new Both();
 
                     obj.user = usr;
                     obj.microblog = microblog;
                     obj.megablog = megablog;
-                    obj.save = save;
 
 
                     return View(obj);
-                }
-                catch(Exception e)
-                {
-                    return RedirectToAction("Error");
-                }
 
             }
      
@@ -159,7 +158,7 @@ namespace tlogNew.Controllers
         public ActionResult Logout()
         {
             Session.Clear();
-            return RedirectToAction("Index");
+            return Redirect(Request.UrlReferrer.PathAndQuery);
         }
 
 
@@ -206,16 +205,16 @@ namespace tlogNew.Controllers
             ViewBag.error = "";
             if (Session["uid"] != null)
             {
-     
+                
                 try
                 {
-                    if (blog.text.ToString().Trim().Length > 250)
+                    if (Regex.Replace(blog.text, @"<[^>]+>|&nbsp;", "").Trim().Length > 250)
                     {
                         ViewBag.display = "";
                         ViewBag.error = "Maximum 250 characters allowed in Microblog";
                         return View();
                     }
-                    else if (blog.text.ToString().Trim().Length < 10)
+                    else if (Regex.Replace(blog.text, @"<[^>]+>|&nbsp;", "").Trim().Length < 10)
                     {
                         ViewBag.display = "";
                         ViewBag.error = "Minimum 10 characters required";
@@ -223,6 +222,7 @@ namespace tlogNew.Controllers
                     }
                     else
                     {
+                        blog.tag = blog.tag.ToLower();
                         using (Model1 db = new Model1())
                         {
                             Microblog b = new Microblog();
@@ -234,6 +234,17 @@ namespace tlogNew.Controllers
                             b.reads = blog.reads;
                             b.tag = blog.tag;
                             db.microblog.Add(b);
+                            db.SaveChanges();
+
+                            Microblog newB = db.microblog.FirstOrDefault(x => x.title == blog.title);
+                            Tag t = new Tag();
+                            t.tag = blog.tag;
+                            t.bid = newB.bid;
+                            t.uid = blog.uid;
+                            t.uname = blog.uname;
+                            t.title = blog.title;
+                            t.reads = blog.reads;
+                            db.tag.Add(t);
                             db.SaveChanges();
                         }
                         return RedirectToAction("UserProfile", "UserAccount", new { uid = Session["uid"] });
@@ -281,13 +292,13 @@ namespace tlogNew.Controllers
 
                 try
                 {
-                    if (blog.text.ToString().Trim().Length > 20000)
+                    if (Regex.Replace(blog.text, @"<[^>]+>|&nbsp;", "").Trim().Length > 20000)
                     {
                         ViewBag.display = "";
                         ViewBag.error = "Maximum 20000 characters allowed in Megablog";
                         return View();
                     }
-                    else if (blog.text.ToString().Trim().Length < 250)
+                    else if (Regex.Replace(blog.text, @"<[^>]+>|&nbsp;", "").Trim().Length < 250)
                     {
                         ViewBag.display = "";
                         ViewBag.error = "Minimum 250 characters required";
@@ -312,6 +323,17 @@ namespace tlogNew.Controllers
                     b.reads = blog.reads;
                     b.category= blog.tag;
                     db.megablog.Add(b);
+                    db.SaveChanges();
+
+                    Megablog newB = db.megablog.FirstOrDefault(x => x.title == blog.title);
+                    Category c = new Category();
+                    c.tag = blog.tag;
+                    c.bid = newB.bid;
+                    c.uid = newB.uid;
+                    c.uname = newB.uname;
+                    c.title = newB.title;
+                    c.reads = newB.reads;
+                    db.category.Add(c);
                     db.SaveChanges();
                 }
                 return RedirectToAction("UserProfile", "UserAccount", new { uid = Session["uid"] });

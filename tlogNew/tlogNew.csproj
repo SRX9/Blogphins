@@ -161,9 +161,10 @@
     <Compile Include="Models\Both.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Megablog.cs" />
+    <Compile Include="Models\Melist.cs" />
     <Compile Include="Models\Microblog.cs" />
+    <Compile Include="Models\Milist.cs" />
     <Compile Include="Models\Model1.cs" />
-    <Compile Include="Models\Save.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -351,10 +352,12 @@
     <Content Include="Views\UserAccount\CreateMegaBlog.cshtml" />
     <Content Include="Views\UserAccount\Choose.cshtml" />
     <Content Include="Views\UserAccount\Error.cshtml" />
+    <Content Include="Views\Blog\Microblog.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\Megablog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Blog\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

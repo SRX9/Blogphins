@@ -49,7 +49,7 @@
 
     <hr />
 
-    <div class="btn-group btn-group-toggle shadow-lg" style="border-bottom:2px solid #d4d4d4;" data-toggle=" buttons">
+    <div class="btn-group btn-group-toggle shadow-lg"  data-toggle=" buttons">
         <button autofocus style="width:18.7vw" onclick="openCity(event, 'micro');" type="button" class="tablink btn btn-secondary">Micro Blogs</button>
         <button style="width:18.7vw" onclick="openCity(event, 'mega');" type="button" class="tablink btn btn-secondary">Mega Blogs</button>
         <button style="width:18.6vw" onclick="openCity(event, 'save');" type="button" class="tablink btn btn-secondary">Saved</button>
@@ -81,9 +81,9 @@
                      width="64" height="64"
                      viewBox="0 0 172 172"
                      style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#000000"><path d="M154.547,1.96576c-4.11523,0.0168 -8.21315,1.59518 -11.30377,4.75299l-50.25678,50.12292c-12.3625,12.3625 -21.63438,27.81458 -26.875,44.61145c-0.40313,1.47812 0.00157,2.95625 0.9422,4.03125c0.80625,0.80625 1.74635,1.2099 2.82135,1.2099c0.40313,0 0.80678,0.00052 1.2099,-0.13385c16.79688,-5.10625 32.24895,-14.5125 44.61145,-26.875l42.46198,-42.4646c1.20937,1.6125 1.88177,3.6297 1.88177,5.64532c0,2.55312 -0.9401,4.83802 -2.82135,6.5849l-20.96198,20.96198c-1.6125,1.6125 -1.6125,4.16457 0,5.6427c0.80625,0.80625 1.88073,1.2099 2.82135,1.2099c0.94063,0 2.0151,-0.40365 2.82135,-1.2099l21.2323,-20.96197c3.35938,-3.35937 5.10468,-7.65833 5.10468,-12.36145c0,-4.16562 -1.4776,-8.19687 -4.1651,-11.42187l1.88177,-1.88177c6.31562,-6.31563 6.31562,-16.52813 0,-22.84375c-3.15781,-3.09062 -7.29089,-4.63594 -11.40613,-4.61914zM25.53125,8.0625c-9.675,0 -17.46875,7.79375 -17.46875,17.46875v120.9375c0,9.675 7.79375,17.46875 17.46875,17.46875h120.9375c9.675,0 17.46875,-7.79375 17.46875,-17.46875v-53.75c0,-2.28437 -1.74687,-4.03125 -4.03125,-4.03125c-2.28438,0 -4.03125,1.74688 -4.03125,4.03125v53.75c0,5.24062 -4.16563,9.40625 -9.40625,9.40625h-120.9375c-5.24063,0 -9.40625,-4.16563 -9.40625,-9.40625v-120.9375c0,-5.24063 4.16562,-9.40625 9.40625,-9.40625h80.625c2.28437,0 4.03125,-1.74688 4.03125,-4.03125c0,-2.28438 -1.74688,-4.03125 -4.03125,-4.03125zM154.53125,10.07813c2.01563,0 4.16458,0.8073 5.6427,2.4198c3.225,3.09062 3.2271,8.19478 0.13647,11.2854l-50.12292,50.12292c-9.54062,9.54063 -21.09687,17.06562 -33.59375,22.17188c4.97187,-12.49688 12.63125,-23.91928 22.17188,-33.4599l50.12292,-50.1203c1.6125,-1.6125 3.62708,-2.4198 5.6427,-2.4198z"></path></g></g></svg>
-                    <h2
+                    <h3
                         onclick="location.href='@Url.Action("CreateMicroBlog", "UserAccount")'"
-                        class="text-capitalize link text-info mt-3 " style="cursor:pointer"><u>Create a Micro Blog Now</u></h2>
+                        class="text-capitalize link text-info mt-3 " style="cursor:pointer"><u>Create a Micro Blog Now</u></h3>
                     </div>
                 }
                 else
@@ -105,7 +105,9 @@
 
                     @foreach (var b in Model.microblog)
                     {
-                        <div class="list-group mb-2 bg-primary boxi " style="padding:15px;cursor:pointer">
+                        <div class="list-group mb-2 bg-primary boxi "
+                             onclick="location.href='@Url.Action("MicroBlog", "Blog", new {title=b.title, id = b.bid, })'"
+                             style="padding:15px;cursor:pointer">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-4 text-secondary"><span class="text-light">@b.reads</span> Reads</h5>
 
@@ -135,10 +137,10 @@
                      width="64" height="64"
                      viewBox="0 0 172 172"
                      style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#000000"><path d="M154.547,1.96576c-4.11523,0.0168 -8.21315,1.59518 -11.30377,4.75299l-50.25678,50.12292c-12.3625,12.3625 -21.63438,27.81458 -26.875,44.61145c-0.40313,1.47812 0.00157,2.95625 0.9422,4.03125c0.80625,0.80625 1.74635,1.2099 2.82135,1.2099c0.40313,0 0.80678,0.00052 1.2099,-0.13385c16.79688,-5.10625 32.24895,-14.5125 44.61145,-26.875l42.46198,-42.4646c1.20937,1.6125 1.88177,3.6297 1.88177,5.64532c0,2.55312 -0.9401,4.83802 -2.82135,6.5849l-20.96198,20.96198c-1.6125,1.6125 -1.6125,4.16457 0,5.6427c0.80625,0.80625 1.88073,1.2099 2.82135,1.2099c0.94063,0 2.0151,-0.40365 2.82135,-1.2099l21.2323,-20.96197c3.35938,-3.35937 5.10468,-7.65833 5.10468,-12.36145c0,-4.16562 -1.4776,-8.19687 -4.1651,-11.42187l1.88177,-1.88177c6.31562,-6.31563 6.31562,-16.52813 0,-22.84375c-3.15781,-3.09062 -7.29089,-4.63594 -11.40613,-4.61914zM25.53125,8.0625c-9.675,0 -17.46875,7.79375 -17.46875,17.46875v120.9375c0,9.675 7.79375,17.46875 17.46875,17.46875h120.9375c9.675,0 17.46875,-7.79375 17.46875,-17.46875v-53.75c0,-2.28437 -1.74687,-4.03125 -4.03125,-4.03125c-2.28438,0 -4.03125,1.74688 -4.03125,4.03125v53.75c0,5.24062 -4.16563,9.40625 -9.40625,9.40625h-120.9375c-5.24063,0 -9.40625,-4.16563 -9.40625,-9.40625v-120.9375c0,-5.24063 4.16562,-9.40625 9.40625,-9.40625h80.625c2.28437,0 4.03125,-1.74688 4.03125,-4.03125c0,-2.28438 -1.74688,-4.03125 -4.03125,-4.03125zM154.53125,10.07813c2.01563,0 4.16458,0.8073 5.6427,2.4198c3.225,3.09062 3.2271,8.19478 0.13647,11.2854l-50.12292,50.12292c-9.54062,9.54063 -21.09687,17.06562 -33.59375,22.17188c4.97187,-12.49688 12.63125,-23.91928 22.17188,-33.4599l50.12292,-50.1203c1.6125,-1.6125 3.62708,-2.4198 5.6427,-2.4198z"></path></g></g></svg>
-                    <h2
+                    <h3
                         onclick="location.href='@Url.Action("CreateMegaBlog", "UserAccount")'"
                         class="text-capitalize link text-info mt-3 " style="cursor:pointer">
-                        <u>Create a Mega Blog Now</u></h2>
+                        <u>Create a Mega Blog Now</u></h3>
                     </div>
                 }
                 else
@@ -159,14 +161,16 @@
 
                     @foreach (var b in Model.megablog)
                     {
-                        <div class="list-group mb-2 bg-dark boxi " style="padding:15px;cursor:pointer">
+                        <div class="list-group mb-2 bg-dark boxi " 
+                             onclick="location.href='@Url.Action("MegaBlog", "Blog", new { title=b.title,id = b.bid })'"
+                             style="padding:15px;cursor:pointer">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-4 text-secondary"><span class="text-light">@b.reads</span> Reads</h5>
+                                <h5 class="mb-4 text-secondary"><span class="text-light" style="font-size:x-large">@b.reads</span> Reads</h5>
                                 <p class="text-secondary">Posted on @b.time</p>
 
                             </div>
                             <h1 class="mb-1 text-capitalize text-light">@b.title</h1>
-                            <h4 class="text-secondary mt-2">@b.category</h4>
+                            <h3 class="text-secondary mt-2" >~@b.category</h3>
                         </div>
                     }
                 </div>
@@ -174,46 +178,7 @@
 
         </div>
 
-        <div id="save" class="w3-container city jumbotron" style="display:none">
-            @if (Model.save.Count == 0)
-            {
-                <div class="text-center">
-                    <h4 class="text-secondary text-capitalize">No Saved Blogs !</h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                         width="128" height="128"
-                         viewBox="0 0 172 172"
-                         style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#909292"><path d="M20.15625,147.54375l64.5,22.84375v0c0.13438,0 0.26875,0.13438 0.40313,0.13438c0.13437,0 0.13437,0 0.26875,0c0.13438,0 0.26875,0 0.5375,0h0.13438c0.26875,0 0.40313,0 0.67188,0h0.13437c0.13437,0 0.26875,-0.13438 0.40313,-0.13438v0l64.5,-22.84375c1.6125,-0.5375 2.6875,-2.15 2.6875,-3.7625v-45.15l13.4375,-4.70312c1.075,-0.40313 2.01563,-1.34375 2.41875,-2.41875c0.40312,-1.075 0.26875,-2.41875 -0.40312,-3.49375l-16.125,-26.875c0,0 0,0 0,-0.13438c0,-0.13437 -0.13438,-0.13437 -0.13438,-0.26875c0,0 0,0 0,-0.13437v0c0,-0.13438 -0.13437,-0.13438 -0.13437,-0.26875l-0.13438,-0.13438c0,0 0,0 -0.13437,-0.13437c0,0 0,0 -0.13438,0c-0.13437,0 -0.13437,-0.13438 -0.26875,-0.13438l-0.13437,-0.13437c0,0 0,0 -0.13438,0h-0.13437c-0.13438,0 -0.13438,-0.13437 -0.26875,-0.13437c-0.13437,0 -0.13437,0 -0.26875,-0.13438c0,0 0,0 -0.13437,0v0l-64.5,-22.84375c-0.26875,-0.13437 -0.5375,-0.13437 -0.80625,-0.13437h-0.13437c-0.26875,0 -0.40313,0 -0.67187,0c-0.13438,0 -0.13438,0 -0.26875,0c-0.26875,0 -0.5375,0.13437 -0.80625,0.13437l-64.5,22.84375v0c0,0 -0.13437,0 -0.13437,0.13438v0c-0.13437,0.13437 -0.40313,0.13437 -0.5375,0.26875v0v0c-0.26875,0.13438 -0.5375,0.40313 -0.80625,0.67188v0l-0.13437,0.13438v0c-0.13438,0.13437 -0.13438,0.26875 -0.26875,0.26875v0c0,0 0,0 -0.13437,0.13437l-16.125,26.875c-0.5375,0.94062 -0.67188,2.28437 -0.26875,3.35938c0.40312,1.075 1.34375,2.01563 2.41875,2.41875l13.4375,4.70313v45.28438c0,1.74687 1.075,3.225 2.6875,3.7625zM146.46875,140.95938l-56.4375,20.02188v-32.38438c0,-2.28438 -1.74688,-4.03125 -4.03125,-4.03125c-2.28437,0 -4.03125,1.74688 -4.03125,4.03125v32.38438l-56.4375,-20.02188v-39.50625l43,15.18438c0.40313,0.13437 0.94062,0.26875 1.34375,0.26875c1.34375,0 2.6875,-0.67187 3.49375,-2.01562l12.63125,-21.09687l12.63125,21.09687c0.80625,1.34375 2.15,2.01563 3.49375,2.01563c0.40313,0 0.94062,-0.13437 1.34375,-0.26875l43,-15.18438zM90.03125,45.95625l48.375,17.2l-48.375,17.2zM103.87188,108.0375l-11.95938,-19.8875l56.70625,-20.15625l11.95937,19.8875zM23.24688,67.99375l56.70625,20.15625l-11.95937,19.8875l-56.70625,-20.15625z"></path></g></g></svg>
-                    <div class="mt-4">
-                        @if (Session["uid"] != null && Session["uid"].ToString() == Model.user.id.ToString())
-                        {
-                            <button type="button" class="btn btn-dark">
-                                Browse for more
-                            </button>
-                        }
-                    </div>
-                    
-                </div>
-            }
-            else
-            {
-                foreach (var b in Model.save)
-                {
-                    if (b.type == 1)
-                    {
-                        <div class="list-group mb-2 bg-primary boxi " style="padding:15px;cursor:pointer">
-
-                            <h3 class="mb-1 text-capitalize text-light">@b.title</h3>
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="list-group mb-2 bg-dark boxi " style="padding:15px;cursor:pointer">
-                            <h1 class="mb-1 text-capitalize text-light">@b.title</h1>
-                        </div>
-                    }
-                }
-            }
-        </div>
+   
     </div>
 </div>
     <script>

@@ -33,6 +33,7 @@
                     <input class="form-control"
                            required
                            style=""
+                           maxlength="30"
                            placeholder="# Write Here"
                            onkeyup="return forceLower(this);"
                            type="text" onkeypress="return AvoidSpace(event,this)"
@@ -46,7 +47,7 @@
 
                 <h3><img style="text-align:right" src="https://img.icons8.com/pastel-glyph/50/000000/ball-point-pen.png"></h3>
                 <div class="boxi">
-                    <textarea id="micro" name="text"></textarea>
+                    <textarea  id="micro" name="text"></textarea>
                 </div>
 
                 <h5 class="text-danger">@ViewBag.error</h5>
@@ -67,7 +68,7 @@
 
 
         }
-
+        @ViewBag.len
     </div>
 
     <div class=" bg-dark" style="padding:10px;text-align:right">

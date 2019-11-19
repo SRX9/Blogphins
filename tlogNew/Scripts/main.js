@@ -4,8 +4,8 @@ tinymce.init({
     selector: '#micro',
     height: 400,
     resize: false,
-    plugins:'wordcount',
-    toolbar: ' bold italic  underline strikethrough superscript subscript| fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | numlist bullist | forecolor backcolor | emoticons | preview | link codesample ',
+    plugins:'wordcount link autosave',
+    toolbar: ' bold italic link autosave  underline strikethrough superscript subscript| fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | numlist bullist | forecolor backcolor | emoticons | preview | link codesample ',
     toolbar_sticky: true,
     menubar: false,
     init_instance_callback: function (editor) {

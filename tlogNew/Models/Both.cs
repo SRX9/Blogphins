@@ -10,7 +10,6 @@ namespace tlogNew.Models
         public User user { get; set; }
         public List<Microblog> microblog { get; set; }
         public List<Megablog> megablog { get; set; }
-        public List<Save> save { get; set; }
 
     }
 }
