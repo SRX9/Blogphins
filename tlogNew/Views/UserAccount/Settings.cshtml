@@ -1,0 +1,48 @@
+﻿@model tlogNew.Models.User
+@{
+    ViewBag.Title = "Settings";
+}
+
+<div class="jumbotron bg-light container ">
+
+    <div class="row">
+        <div class="col-4">
+            <h3 class="mb-3 text-dark">Account Settings</h3>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active">
+                    Edit Account Details
+                </a>
+                <a href="#" class="list-group-item list-group-item-action   ">
+                    Change Password
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Delete Account
+                </a>
+            </div>
+        </div>
+        <div class="col-6 ">
+            <h4 class="text-secondary text-capitalize">Edit Account Details</h4>
+            <hr />
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <p>Username</p>
+                <input type="text" class="form-control mb-3" value="@Model.username" name="username"
+                       placeholder="@Model.username" id="inputDefault">
+                <p>Email</p>
+                <input type="email" class="form-control mb-3" name="email"
+                       value="@Model.email"
+                       placeholder="@Model.email" id="inputDefault">
+                <p>Bio</p>
+                <input type="text" 
+                       value="@Model.bio"
+                       class="form-control mb-3" name="bio"
+                       placeholder="@Model.bio" id="inputDefault">
+                <hr />
+                <button type="submit" class="float-right btn btn-primary">Update</button>
+            }
+        </div>
+    </div>
+
+</div>
+

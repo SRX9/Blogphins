@@ -136,8 +136,8 @@ namespace tlogNew.Controllers
                     {
                         return RedirectToAction("Error");
                     }
-                    List<Microblog> microblog = db.microblog.Where(u => u.uid == uid).ToList();
-                    List<Megablog> megablog = db.megablog.Where(u => u.uid == uid).ToList();
+                    List<Microblog> microblog = db.microblog.Where(u => u.uid == uid).OrderByDescending(x=>x.time).Take(40).ToList();
+                    List<Megablog> megablog = db.megablog.Where(u => u.uid == uid).OrderByDescending(x => x.time).Take(40).ToList();
 
                     Both obj = new Both();
 
@@ -152,6 +152,60 @@ namespace tlogNew.Controllers
      
         }
 
+
+
+        //User Account Settings
+        public ActionResult Settings()
+        {
+            ViewBag.update = "";
+            if (Session["uid"]==null)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                using (Model1 db = new Model1())
+                {
+                    string id = Session["uid"].ToString();
+                    User usr = db.user.FirstOrDefault(u => u.id.ToString() == id);
+                    return View(usr);
+                }
+
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Settings(User user)
+        {
+            if (Session["uid"] == null)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                using (Model1 db = new Model1())
+                {
+                    string id = Session["uid"].ToString();
+
+                    User usr = (from p in db.user
+                                where p.id.ToString() == id
+                                select p).SingleOrDefault();
+                    if(user!=usr)
+                    {
+                        usr.username = user.username;
+                        usr.email = user.email;
+                        usr.bio = user.bio;
+                        db.SaveChanges();
+                        Session["uname"] = user.username;
+
+                    }
+
+  
+                    return View(usr);
+                }
+
+            }
+        }
 
 
         //Logout
@@ -347,18 +401,5 @@ namespace tlogNew.Controllers
         }
 
 
-        //Settings
-        public ActionResult Settings()
-        {
-            if(Session["uid"]!=null)
-            {
-
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
-        }
     }
 }

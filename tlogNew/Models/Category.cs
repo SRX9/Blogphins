@@ -17,6 +17,7 @@ namespace tlogNew.Models
 
         public int uid { get; set; }
 
+
         public string uname { get; set; }
 
         public string title { get; set; }

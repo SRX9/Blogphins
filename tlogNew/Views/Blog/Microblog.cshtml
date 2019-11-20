@@ -2,75 +2,112 @@
 @{
     ViewBag.Title = "Microblog";
 }
-<div class="container mt-4" style="width:40vw">
-    <h3 class="mb-3"><code class="text-primary">Micro</code> <kbd>Blog</kbd></h3>
-    <div class="bg-dark col text-light" style="padding:2%">
-        <h4 style="display:inline-block" class="text-light">@Model.blog.uname</h4>
-        <h4 style="display:inline-block;float:right" class="">
+<div class="row">
 
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                 width="40" height="40"
-                 viewBox="0 0 172 172"
-                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M42.785,13.76c-6.06031,0.26875 -12.41625,2.15 -18.275,6.88c-2.87562,2.31125 26.59281,17.10594 23.9725,20.1025c-24.87281,28.4875 -23.95906,53.535 -24.725,80.195c-0.04031,1.42438 -0.73906,2.44563 -1.8275,3.225c-1.65281,1.1825 -21.6075,9.64813 -21.6075,30.745c0,1.90813 1.14219,3.44 1.935,3.44c2.0425,0 7.35031,-7.28312 11.0725,-8.7075c4.35375,-1.65281 5.44219,-0.48375 9.245,-0.7525c3.91031,-0.28219 5.61688,-2.10969 6.88,-3.225c0.83313,0.83313 4.31344,2.94281 5.6975,2.9025c4.60906,-0.13437 8.08938,-0.645 9.7825,-0.7525c4.1925,-0.28219 6.26188,2.99656 7.095,3.5475c2.17688,1.45125 2.60688,1.42438 2.9025,-0.43c1.76031,-11.08594 -6.59781,-20.15625 -14.2975,-25.2625c-1.42437,-0.94062 -1.10187,-2.41875 1.075,-6.665c16.56844,-32.42469 44.10188,-46.18469 48.6975,-47.4075c-2.78156,2.40531 -14.59312,16.50125 -13.115,17.2c24.85938,4.04469 36.45594,-13.84062 37.9475,-15.3725c2.33813,-2.43219 5.10625,-3.58781 8.385,-4.1925c5.2675,-0.9675 18.01969,-1.505 33.97,-1.3975c3.18469,-0.05375 11.42188,-0.41656 13.975,-2.6875c1.81406,-1.505 -0.08062,-3.27875 -2.15,-4.515c1.66625,-1.96187 3.27875,-3.02344 1.1825,-5.805c-0.95406,-1.26312 -3.95062,-3.87 -7.6325,-6.665c1.85438,-2.35156 -4.75687,-29.22656 -42.355,-31.605c-30.28812,-1.92156 -40.78281,4.8375 -45.15,5.375c-1.34375,0.16125 -2.84875,-0.24187 -4.1925,-0.645c-3.09062,-0.95406 -15.1575,-8.11625 -28.4875,-7.525zM137.6,48.16c1.89469,0 3.44,1.54531 3.44,3.44c0,1.89469 -1.54531,3.44 -3.44,3.44c-1.89469,0 -3.44,-1.54531 -3.44,-3.44c0,-1.89469 1.54531,-3.44 3.44,-3.44zM143.0825,71.38c-8.93594,0.17469 -15.56062,0.57781 -18.8125,1.1825c-1.14219,0.215 -2.10969,0.48375 -3.01,0.86c-2.09625,3.87 -3.89687,7.65938 -3.44,7.8475c12.05344,1.22281 20.77438,-4.17906 25.2625,-9.89z"></path></g></g></svg>
-        </h4>
-        <p class="text-secondary">Posted on @Model.blog.time</p>
-        <h4 class="card-title text-capitalize ">@Model.blog.title</h4>
-    </div>
-    <div class="card">
-        <div class="card-body text-primary">
+    <div class="col-sm-3 ">
+        <div class="mt-4 w-75 float-right" >
+            <h3 class="mb-3 text-secondary">
+                <img src="https://img.icons8.com/material/30/000000/combo-chart--v4.png">
+                 tags </h3>
+            <ul class="list-group">
+                @foreach (var t in Model.tagtrend)
+                {
+                    <li style="font-size:2vh;font-weight:900" class="text-info list-group-item d-flex justify-content-between align-items-center">
+                        #@t.tag
+                        <span class="badge badge-primary badge-pill">@t.count</span>
+                    </li>
+                }
 
-
-            @Html.Raw(@WebUtility.HtmlDecode(Model.blog.text))
-
-        </div>
-        <hr />
-        <div class="container mb-2">
-            <div class="row">
-                <div class="col-sm text-center" style="font-size:2vh">
-                    <span class="text-primary"
-                          style="font-size:2.2vh">@Model.blog.reads</span> Reads
-                    </div>
-                    <h2 class="text-secondary" style="border:0.7px solid #cecece"></h2>
-                    <div class="col-sm text-center">
-                        <h3 class="text-info text-lowercase">#@Model.blog.tag</h3>
-                    </div>
-                </div>
-            </div>
+            </ul>
         </div>
     </div>
+    <div class="col-sm-5">
+            <div class="container mt-4" >
+                <h3 class="mb-3"><code class="text-primary">Micro</code> <kbd>Blog</kbd></h3>
+                <div class="bg-dark col text-light" style="padding:2%">
+                    <h5 style="display:inline-block" class="text-light">@Model.blog.uname</h5>
+                    <h4 style="display:inline-block;float:right" class="">
 
-<div class="">
-    <h3 class="text-capitalize">More from <h3 class="text-info text-lowercase">#@Model.blog.tag</h3></h3>
-    <hr />
-
-
-    <div class="row">
-        @foreach (var b in Model.list)
-        {
-            if (b.bid != Model.blog.bid)
-            {
-
-                <div onclick="location.href='@Url.Action("MicroBlog", "Blog", new {title=b.title, id = b.bid, })'" 
-                     class="card pointer col text-white bg-primary mb-3"
-                     style="max-width: 20vw;margin:0.8%;cursor:pointer">
-                    <div class="card-header">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                             width="30" height="30"
+                             width="40" height="40"
                              viewBox="0 0 172 172"
                              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M42.785,13.76c-6.06031,0.26875 -12.41625,2.15 -18.275,6.88c-2.87562,2.31125 26.59281,17.10594 23.9725,20.1025c-24.87281,28.4875 -23.95906,53.535 -24.725,80.195c-0.04031,1.42438 -0.73906,2.44563 -1.8275,3.225c-1.65281,1.1825 -21.6075,9.64813 -21.6075,30.745c0,1.90813 1.14219,3.44 1.935,3.44c2.0425,0 7.35031,-7.28312 11.0725,-8.7075c4.35375,-1.65281 5.44219,-0.48375 9.245,-0.7525c3.91031,-0.28219 5.61688,-2.10969 6.88,-3.225c0.83313,0.83313 4.31344,2.94281 5.6975,2.9025c4.60906,-0.13437 8.08938,-0.645 9.7825,-0.7525c4.1925,-0.28219 6.26188,2.99656 7.095,3.5475c2.17688,1.45125 2.60688,1.42438 2.9025,-0.43c1.76031,-11.08594 -6.59781,-20.15625 -14.2975,-25.2625c-1.42437,-0.94062 -1.10187,-2.41875 1.075,-6.665c16.56844,-32.42469 44.10188,-46.18469 48.6975,-47.4075c-2.78156,2.40531 -14.59312,16.50125 -13.115,17.2c24.85938,4.04469 36.45594,-13.84062 37.9475,-15.3725c2.33813,-2.43219 5.10625,-3.58781 8.385,-4.1925c5.2675,-0.9675 18.01969,-1.505 33.97,-1.3975c3.18469,-0.05375 11.42188,-0.41656 13.975,-2.6875c1.81406,-1.505 -0.08062,-3.27875 -2.15,-4.515c1.66625,-1.96187 3.27875,-3.02344 1.1825,-5.805c-0.95406,-1.26312 -3.95062,-3.87 -7.6325,-6.665c1.85438,-2.35156 -4.75687,-29.22656 -42.355,-31.605c-30.28812,-1.92156 -40.78281,4.8375 -45.15,5.375c-1.34375,0.16125 -2.84875,-0.24187 -4.1925,-0.645c-3.09062,-0.95406 -15.1575,-8.11625 -28.4875,-7.525zM137.6,48.16c1.89469,0 3.44,1.54531 3.44,3.44c0,1.89469 -1.54531,3.44 -3.44,3.44c-1.89469,0 -3.44,-1.54531 -3.44,-3.44c0,-1.89469 1.54531,-3.44 3.44,-3.44zM143.0825,71.38c-8.93594,0.17469 -15.56062,0.57781 -18.8125,1.1825c-1.14219,0.215 -2.10969,0.48375 -3.01,0.86c-2.09625,3.87 -3.89687,7.65938 -3.44,7.8475c12.05344,1.22281 20.77438,-4.17906 25.2625,-9.89z"></path></g></g></svg>
-                        <span style="float:right">@b.reads Reads</span>
+                    </h4>
+                    <p class="text-secondary">Posted on @Model.blog.time</p>
+                    <h4 class="card-title text-capitalize ">@Model.blog.title</h4>
+                </div>
+                <div class="card">
+                    <div class="card-body text-primary">
+
+
+                        @Html.Raw(@WebUtility.HtmlDecode(Model.blog.text))
+
                     </div>
-                    <div class="card-body">
-                        <h4 class="card-title text-capitalize">@b.title</h4>
-                        <p class="card-text text-secondary">Posted by @b.uname</p>
+                    <hr />
+                    <div class="container mb-2">
+                        <div class="row">
+                            <div class="col-sm text-center" style="font-size:2vh">
+                                <span class="text-primary"
+                                      style="font-size:2.2vh">@Model.blog.reads</span> Reads
+                                </div>
+                                <h2 class="text-secondary" style="border:0.7px solid #cecece"></h2>
+                                <div class="col-sm text-center">
+                                    <h3 class="text-info text-lowercase">#@Model.blog.tag</h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            }
-
-        }
-
     </div>
-</div>
-    <script>
+    <div class="col-sm-3">
+                <div class="mt-4 ">
+                    <h3 class="mb-3 text-secondary text-capitalize">Related
+                        <span class="text-info text-lowercase float-right">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+     width="40" height="40"
+     viewBox="0 0 172 172"
+     style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#3498db"><path d="M46.30769,19.84615c-14.54868,0 -26.46154,11.91286 -26.46154,26.46154v79.38462c0,14.54868 11.91286,26.46154 26.46154,26.46154h79.38462c14.54868,0 26.46154,-11.91286 26.46154,-26.46154v-79.38462c0,-14.54868 -11.91286,-26.46154 -26.46154,-26.46154zM59.53846,46.30769h13.23077v13.23077h26.46154v-13.23077h13.23077v13.23077h13.23077v13.23077h-13.23077v26.46154h13.23077v13.23077h-13.23077v13.23077h-13.23077v-13.23077h-26.46154v13.23077h-13.23077v-13.23077h-13.23077v-13.23077h13.23077v-26.46154h-13.23077v-13.23077h13.23077zM72.76923,72.76923v26.46154h26.46154v-26.46154z"></path></g></g></svg>
+                        @Model.blog.tag</span>
+                    </h3>
+                    <div class="">
+                        @if (Model.list.Count != 0)
+                        {
+                            foreach (var b in Model.list)
+                            {
+                                if (b.bid != Model.blog.bid)
+                                {
 
-    </script>
+                                    <div onclick="location.href='@Url.Action("MicroBlog", "Blog", new {title=b.title, id = b.bid, })'"
+                                         class="card pointer  text-white bg-dark mb-3"
+                                         style="width:100%;margin:0.8%;cursor:pointer">
+                                        <div class="card-header">
+                                            <span>@b.reads <span class="text-secondary">Reads</span></span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                 width="30" height="30"
+                                                 viewBox="0 0 172 172"
+                                                 style="float:right;fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M42.785,13.76c-6.06031,0.26875 -12.41625,2.15 -18.275,6.88c-2.87562,2.31125 26.59281,17.10594 23.9725,20.1025c-24.87281,28.4875 -23.95906,53.535 -24.725,80.195c-0.04031,1.42438 -0.73906,2.44563 -1.8275,3.225c-1.65281,1.1825 -21.6075,9.64813 -21.6075,30.745c0,1.90813 1.14219,3.44 1.935,3.44c2.0425,0 7.35031,-7.28312 11.0725,-8.7075c4.35375,-1.65281 5.44219,-0.48375 9.245,-0.7525c3.91031,-0.28219 5.61688,-2.10969 6.88,-3.225c0.83313,0.83313 4.31344,2.94281 5.6975,2.9025c4.60906,-0.13437 8.08938,-0.645 9.7825,-0.7525c4.1925,-0.28219 6.26188,2.99656 7.095,3.5475c2.17688,1.45125 2.60688,1.42438 2.9025,-0.43c1.76031,-11.08594 -6.59781,-20.15625 -14.2975,-25.2625c-1.42437,-0.94062 -1.10187,-2.41875 1.075,-6.665c16.56844,-32.42469 44.10188,-46.18469 48.6975,-47.4075c-2.78156,2.40531 -14.59312,16.50125 -13.115,17.2c24.85938,4.04469 36.45594,-13.84062 37.9475,-15.3725c2.33813,-2.43219 5.10625,-3.58781 8.385,-4.1925c5.2675,-0.9675 18.01969,-1.505 33.97,-1.3975c3.18469,-0.05375 11.42188,-0.41656 13.975,-2.6875c1.81406,-1.505 -0.08062,-3.27875 -2.15,-4.515c1.66625,-1.96187 3.27875,-3.02344 1.1825,-5.805c-0.95406,-1.26312 -3.95062,-3.87 -7.6325,-6.665c1.85438,-2.35156 -4.75687,-29.22656 -42.355,-31.605c-30.28812,-1.92156 -40.78281,4.8375 -45.15,5.375c-1.34375,0.16125 -2.84875,-0.24187 -4.1925,-0.645c-3.09062,-0.95406 -15.1575,-8.11625 -28.4875,-7.525zM137.6,48.16c1.89469,0 3.44,1.54531 3.44,3.44c0,1.89469 -1.54531,3.44 -3.44,3.44c-1.89469,0 -3.44,-1.54531 -3.44,-3.44c0,-1.89469 1.54531,-3.44 3.44,-3.44zM143.0825,71.38c-8.93594,0.17469 -15.56062,0.57781 -18.8125,1.1825c-1.14219,0.215 -2.10969,0.48375 -3.01,0.86c-2.09625,3.87 -3.89687,7.65938 -3.44,7.8475c12.05344,1.22281 20.77438,-4.17906 25.2625,-9.89z"></path></g></g></svg>
+
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title text-capitalize">@b.title</h4>
+                                            <p class="card-text text-secondary">Posted by @b.uname</p>
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                        }
+
+
+                    </div>
+                    @if(Model.list.Count>1)
+                    {
+                        <button class="btn w-100 btn-outline-secondary">Show More</button>
+                    }
+                </div>
+
+     </div>
+    <div class="col-sm-1"></div>
+</div>
+
+

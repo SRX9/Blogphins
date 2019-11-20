@@ -18,14 +18,14 @@ tinymce.init({
     selector: '#mega',
     resize: false,
 
-    plugins: 'preview lineheight paste importcss searchreplace autolink autosave save directionality  visualblocks visualchars fullscreen image link media  codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap  emoticons',
+    plugins: 'preview lineheight paste importcss searchreplace autolink autosave save directionality  visualblocks visualchars  image link media  codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap  emoticons',
 
     init_instance_callback: function (editor) {
         $(editor.getContainer()).find('button.tox-statusbar__wordcount').click();  // if you use jQuery
     },
 
     menubar: 'edit view  table ',
-    toolbar: 'undo redo | bold italic underline strikethrough superscript subscript| fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify |image media|  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview | image media template link anchor codesample | ltr rtl| outdent indent ',
+    toolbar: 'undo redo | bold italic underline strikethrough superscript subscript| fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify |image media|  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | preview | image media template link anchor codesample | ltr rtl| outdent indent ',
     toolbar_sticky: true,
     autosave_ask_before_unload: true,
     autosave_interval: "30s",

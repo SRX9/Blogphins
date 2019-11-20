@@ -6,7 +6,8 @@
 <div class="jumbotron container bg-secondary">
     @if (Session["uid"] != null && Session["uid"].ToString() == Model.user.id.ToString())
     {
-        <div style="text-align:right;color:black;font-weight:800;cursor:pointer">
+        <div onclick="location.href='@Url.Action("Settings", "UserAccount")'"
+             style="text-align:right;color:black;font-weight:800;cursor:pointer">
             <img src="https://img.icons8.com/ios/30/000000/settings.png"> Settings
         </div>
     }

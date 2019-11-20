@@ -9,5 +9,6 @@ namespace tlogNew.Models
     {
         public Megablog blog { get; set; }
         public List<Category> list { get; set; }
+        public List<Tag> tagtrend { get; set; }
     }
 }

@@ -71,7 +71,7 @@
         </div>
         <input type="hidden" name="uname" value="@Session["uname"]" />
         <input type="hidden" name="uid" value="@Session["uid"]" />
-        <input type="hidden" name="time" value="@DateTime.Now.ToString()" />
+        <input type="hidden" name="time" value="@DateTime.Today.ToShortDateString()" />
 
         <div style="text-align:right;padding-top:15px;">
             <button type="submit" class="btn btn-primary ">

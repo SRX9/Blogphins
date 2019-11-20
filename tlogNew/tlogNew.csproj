@@ -166,6 +166,7 @@
     <Compile Include="Models\Milist.cs" />
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\Trend.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -355,6 +356,7 @@
     <Content Include="Views\Blog\Microblog.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Megablog.cshtml" />
+    <Content Include="Views\UserAccount\Settings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

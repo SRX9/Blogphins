@@ -11,7 +11,7 @@
     <nav style="margin-top:-2.7%; padding-left:15%;padding-right:15%;" 
          class="sticky-top shadow-sm navbar navbar-expand-lg  navbar-light bg-light">
         <a style="font-size:3vh" class="text-lowercase " href="/">
-            <img src="https://img.icons8.com/ios-filled/50/000000/dolphin.png"> <code>log</code> <kbd>phins</kbd></a>
+            <img src="https://img.icons8.com/ios-filled/50/000000/dolphin.png"> <code>blog</code> <kbd>phins</kbd></a>
         <div class="collapse navbar-collapse" style="padding-left:15px" id="navbarColor03">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -26,7 +26,9 @@
                 <button type="button" class="btn btn-secondary">
                     Browse
                 </button>
-                <button style="font-weight:900;font-size:15px;color:#0f91e8" type="button" class="btn btn-link"
+
+                <button style="font-weight:900;font-size:15px;color:#0f91e8" 
+                         class="btn btn-dark"
                         onclick="location.href='@Url.Action("UserProfile", "UserAccount", new { uid = Session["uid"] })'">
                     <b class="text-lowercase">@Session["uname"]</b>
                 </button>

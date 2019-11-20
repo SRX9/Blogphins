@@ -29,10 +29,40 @@ namespace tlogNew.Controllers
                 {
                     return RedirectToAction("Index");
                 }
-                var list = db.tag.Where(t => t.tag == blog.tag).ToList();
+                var list = db.tag.Where(y => y.tag == blog.tag).
+                    OrderByDescending(x => x.id).Take(10).ToList();
                 m.blog = blog;
                 m.list = list;
 
+
+                List<Trend> trends = new List<Trend>();
+
+
+                var t = db.tag.Select(x => x).OrderByDescending(x=>x.id).Take(10000).
+                    ToList();
+
+
+                var taglist = t.Select(e => e.tag).Distinct().ToList();
+                
+
+                int c;
+                for (int i=0;i<taglist.Count;i++)
+                {
+                    c = 0;
+                    for(int j=i;j<t.Count;j++)
+                    {
+                        if(t[i].tag==t[j].tag)
+                        {
+                            c++;
+                        }
+                    }
+                    Trend newt = new Trend();
+                    newt.tag = t[i].tag;
+                    newt.count = c;
+                    trends.Add(newt);
+                }
+
+                m.tagtrend = trends.OrderByDescending(v=>v.count).ToList();
                 return View(m);
                 
             }
@@ -54,9 +84,11 @@ namespace tlogNew.Controllers
                 {
                     return RedirectToAction("Index");
                 }
-                var list = db.category.Where(t => t.tag == blog.category).ToList();
+                var list = db.category.Where(t => t.tag == blog.category).OrderByDescending(x => x.id).Take(10).ToList();
                 m.blog = blog;
                 m.list = list;
+
+                
 
                 return View(m);
 
