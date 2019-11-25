@@ -10,7 +10,7 @@
 </style>
 
 
-<div style="margin-bottom:-5.2%">
+<div style="margin-bottom:-5.2%" class="full">
     <div class="jumbotron bg-secondary container " >
 
         <h2><code style="color:black">Create</code> <kbd>MicroBlog</kbd></h2>
@@ -20,15 +20,14 @@
         {
 
 
-            <div style="width:100%;">
-                <div style="display:inline-block;">
+            <div class="row">
+                <div class="col-sm-8">
                     <h4>Title for MicroBlog</h4>
                     <input required maxlength="250" class="form-control"
-                           style="width:300%"
                            name="title" type="text" placeholder="Write here">
 
                 </div>
-                <div style="display:inline-block;float:right">
+                <div class="col-sm-4">
                     <h4 style="font-weight:900"># TagName</h4>
                     <input class="form-control"
                            required
@@ -43,10 +42,10 @@
 
             <hr class="my-4">
 
-            <div style="padding-top:5px;padding-right:15%;padding-left:15%">
+            <div class="edi" style="padding-top:5px;width:100%">
 
                 <h3><img style="text-align:right" src="https://img.icons8.com/pastel-glyph/50/000000/ball-point-pen.png"></h3>
-                <div class="boxi">
+                <div class=" boxi">
                     <textarea  id="micro" name="text"></textarea>
                 </div>
 
@@ -68,7 +67,8 @@
 
 
         }
-        @ViewBag.len
+            <p class="text-danger" style="font-weight:900">@ViewBag.len</p>
+            <p class="text-info" style="font-weight:900">@ViewBag.post</p>
     </div>
 
     <div class=" bg-dark" style="padding:10px;text-align:right">
@@ -80,6 +80,9 @@
     </div>
 
 </div>
+
+
+
 
 <script>
     function AvoidSpace(event, strInput) {

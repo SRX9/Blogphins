@@ -58,6 +58,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -131,41 +134,31 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MegablogsController.cs" />
+    <Compile Include="Controllers\MicroblogsController.cs" />
     <Compile Include="Controllers\UserAccountController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911120512344_InitialCreate.cs" />
-    <Compile Include="Migrations\201911120512344_InitialCreate.Designer.cs">
-      <DependentUpon>201911120512344_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911130745300_manytomany.cs" />
-    <Compile Include="Migrations\201911130745300_manytomany.Designer.cs">
-      <DependentUpon>201911130745300_manytomany.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911131930025_Updated Models.cs" />
-    <Compile Include="Migrations\201911131930025_Updated Models.Designer.cs">
-      <DependentUpon>201911131930025_Updated Models.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911131932032_Updated Models new.cs" />
-    <Compile Include="Migrations\201911131932032_Updated Models new.Designer.cs">
-      <DependentUpon>201911131932032_Updated Models new.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911132058396_Udate latest.cs" />
-    <Compile Include="Migrations\201911132058396_Udate latest.Designer.cs">
-      <DependentUpon>201911132058396_Udate latest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Both.cs" />
+    <Compile Include="Models\Browse.cs" />
+    <Compile Include="Models\BrowseCat.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Latlist.cs" />
     <Compile Include="Models\Megablog.cs" />
+    <Compile Include="Models\megacat.cs" />
     <Compile Include="Models\Melist.cs" />
     <Compile Include="Models\Microblog.cs" />
     <Compile Include="Models\Milist.cs" />
     <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\nodemicro.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\Taglist.cs" />
     <Compile Include="Models\Trend.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -357,6 +350,28 @@
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Megablog.cshtml" />
     <Content Include="Views\UserAccount\Settings.cshtml" />
+    <Content Include="Views\UserAccount\ChangePassword.cshtml" />
+    <Content Include="Views\UserAccount\Delete.cshtml" />
+    <Content Include="Views\Home\Browse.cshtml" />
+    <Content Include="Views\Home\Tags.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Home\CategoryAll.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\UserAccount\DeleteMicro.cshtml" />
+    <Content Include="Views\UserAccount\DeleteMega.cshtml" />
+    <Content Include="Views\Megablogs\Delete.cshtml" />
+    <Content Include="Views\Megablogs\Details.cshtml" />
+    <Content Include="Views\Megablogs\Index.cshtml" />
+    <Content Include="Views\Microblogs\Delete.cshtml" />
+    <Content Include="Views\Microblogs\Details.cshtml" />
+    <Content Include="Views\Microblogs\Index.cshtml" />
+    <Content Include="Views\Admin\AdminLogin.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Home\Trends.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -373,23 +388,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911120512344_InitialCreate.resx">
-      <DependentUpon>201911120512344_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911130745300_manytomany.resx">
-      <DependentUpon>201911130745300_manytomany.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911131930025_Updated Models.resx">
-      <DependentUpon>201911131930025_Updated Models.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911131932032_Updated Models new.resx">
-      <DependentUpon>201911131932032_Updated Models new.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911132058396_Udate latest.resx">
-      <DependentUpon>201911132058396_Udate latest.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

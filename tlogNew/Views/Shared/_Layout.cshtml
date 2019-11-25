@@ -5,63 +5,206 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body class="jumbotron">
-    <nav style="margin-top:-2.7%; padding-left:15%;padding-right:15%;" 
-         class="sticky-top shadow-sm navbar navbar-expand-lg  navbar-light bg-light">
+<body class="jumbotron scrollbar" id="style-1">
+
+    <style>
+        #style-1::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        #style-1::-webkit-scrollbar {
+            width: 12px;
+            background-color: rgba(0,0,0,0.3);
+        }
+
+        #style-1::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #555;
+        }
+    </style>
+
+    <nav style="margin-top:-2.7%; padding-left:15%;padding-right:15%;"
+         class="full sticky-top shadow navbar navbar-expand-lg  navbar-light bg-light">
         <a style="font-size:3vh" class="text-lowercase " href="/">
-            <img src="https://img.icons8.com/ios-filled/50/000000/dolphin.png"> <code>blog</code> <kbd>phins</kbd></a>
-        <div class="collapse navbar-collapse" style="padding-left:15px" id="navbarColor03">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                        <button  class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </li>
-            </ul>
-            @if (Session["uid"] != null)
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                 width="50" height="50"
+                 viewBox="0 0 172 172"
+                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#333333"><path d="M42.785,13.76c-6.06031,0.26875 -12.41625,2.15 -18.275,6.88c-2.87562,2.31125 26.59281,17.10594 23.9725,20.1025c-24.87281,28.4875 -23.95906,53.535 -24.725,80.195c-0.04031,1.42438 -0.73906,2.44563 -1.8275,3.225c-1.65281,1.1825 -21.6075,9.64813 -21.6075,30.745c0,1.90813 1.14219,3.44 1.935,3.44c2.0425,0 7.35031,-7.28312 11.0725,-8.7075c4.35375,-1.65281 5.44219,-0.48375 9.245,-0.7525c3.91031,-0.28219 5.61688,-2.10969 6.88,-3.225c0.83313,0.83313 4.31344,2.94281 5.6975,2.9025c4.60906,-0.13437 8.08938,-0.645 9.7825,-0.7525c4.1925,-0.28219 6.26188,2.99656 7.095,3.5475c2.17688,1.45125 2.60688,1.42438 2.9025,-0.43c1.76031,-11.08594 -6.59781,-20.15625 -14.2975,-25.2625c-1.42437,-0.94062 -1.10187,-2.41875 1.075,-6.665c16.56844,-32.42469 44.10188,-46.18469 48.6975,-47.4075c-2.78156,2.40531 -14.59312,16.50125 -13.115,17.2c24.85938,4.04469 36.45594,-13.84062 37.9475,-15.3725c2.33813,-2.43219 5.10625,-3.58781 8.385,-4.1925c5.2675,-0.9675 18.01969,-1.505 33.97,-1.3975c3.18469,-0.05375 11.42188,-0.41656 13.975,-2.6875c1.81406,-1.505 -0.08062,-3.27875 -2.15,-4.515c1.66625,-1.96187 3.27875,-3.02344 1.1825,-5.805c-0.95406,-1.26312 -3.95062,-3.87 -7.6325,-6.665c1.85438,-2.35156 -4.75687,-29.22656 -42.355,-31.605c-30.28812,-1.92156 -40.78281,4.8375 -45.15,5.375c-1.34375,0.16125 -2.84875,-0.24187 -4.1925,-0.645c-3.09062,-0.95406 -15.1575,-8.11625 -28.4875,-7.525zM137.6,48.16c1.89469,0 3.44,1.54531 3.44,3.44c0,1.89469 -1.54531,3.44 -3.44,3.44c-1.89469,0 -3.44,-1.54531 -3.44,-3.44c0,-1.89469 1.54531,-3.44 3.44,-3.44zM143.0825,71.38c-8.93594,0.17469 -15.56062,0.57781 -18.8125,1.1825c-1.14219,0.215 -2.10969,0.48375 -3.01,0.86c-2.09625,3.87 -3.89687,7.65938 -3.44,7.8475c12.05344,1.22281 20.77438,-4.17906 25.2625,-9.89z"></path></g></g></svg> <code>Blog<kbd>phins</kbd></code>
+        </a>
+        <div class="collapse navbar-collapse" style="padding-left:2.2%" id="navbarColor03">
+
+
+            @if (HttpContext.Current.Request.Url.AbsolutePath != "/Home/Search")
             {
-                <button type="button" class="btn btn-secondary">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <form action="/Home/Search" method="post"
+                              class="form-inline w-100">
+                            <div class="pr-2" style="display:inline-block">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                     width="35" height="35"
+                                     viewBox="0 0 172 172"
+                                     style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#666666"><path d="M64.5,14.33333c-27.6214,0 -50.16667,22.54527 -50.16667,50.16667c0,27.6214 22.54527,50.16667 50.16667,50.16667c12.52732,0 23.97256,-4.67249 32.7819,-12.31771l3.05143,3.05143v9.26628l40.03256,40.03256c3.95599,3.95599 10.37733,3.956 14.33333,0c3.956,-3.956 3.956,-10.37733 0,-14.33333l-40.03256,-40.03256h-9.26628l-3.05143,-3.05143c7.64521,-8.80934 12.31771,-20.25458 12.31771,-32.7819c0,-27.6214 -22.54527,-50.16667 -50.16667,-50.16667zM64.5,28.66667c19.87509,0 35.83333,15.95824 35.83333,35.83333c0,19.87509 -15.95825,35.83333 -35.83333,35.83333c-19.87509,0 -35.83333,-15.95825 -35.83333,-35.83333c0,-19.87509 15.95824,-35.83333 35.83333,-35.83333z"></path></g></g></svg>
+                            </div>
+                            <input style="display:inline-block;width:25vw" name="q" class="form-control" type="text" placeholder="Search">
+                        </form>
+                    </li>
+                </ul>
+            }
+        </div>
+        <div class="float-right">
+            @if (HttpContext.Current.Request.Url.AbsolutePath != "/Home/Browse")
+            {
+                <button type="button"
+                        onclick="location.href='@Url.Action("Browse", "Home")'"
+                        class="btn btn-secondary">
                     Browse
                 </button>
+            }
 
-                <button style="font-weight:900;font-size:15px;color:#0f91e8" 
-                         class="btn btn-dark"
-                        onclick="location.href='@Url.Action("UserProfile", "UserAccount", new { uid = Session["uid"] })'">
-                    <b class="text-lowercase">@Session["uname"]</b>
-                </button>
+            @if (Session["admin"] != null)
+            {
                 <button type="button"
-                        onclick="location.href='@Url.Action("Logout", "UserAccount")'"
-                        class="btn btn-primary">
-                    Logout
+                        onclick="location.href='@Url.Action("LogoutAdmin", "Admin")'"
+                        class="btn btn-primary"
+                        style="border:2px solid black;">
+                    Admin Logout
                 </button>
-
             }
             else
             {
-                <button type="button" class="btn btn-secondary">
-                    Browse
-                </button>
-                <button onclick="location.href='@Url.Action("Login", "UserAccount")'"
-                        type="button" class="btn btn-outline-primary ">
-                    Login
-                </button>
+                if (Session["uid"] != null)
+                {
 
-                <button type="button"
-                        style="border:2.1px solid black"
-                        onclick="location.href='@Url.Action("Register", "UserAccount")'"
-                        class="btn btn-primary ">
-                    Create Account
-                </button>
+
+                    <button style="font-weight:900;font-size:15px;"
+                            class="btn btn-outline-dark"
+                            onclick="location.href='@Url.Action("UserProfile", "UserAccount", new { uid = Session["uid"],uname=Session["uname"] })'">
+                        <b class="text-lowercase">@Session["uname"]</b>
+                    </button>
+                    <button type="button"
+                            onclick="location.href='@Url.Action("Logout", "UserAccount")'"
+                            class="btn btn-primary"
+                            style="border:2px solid black;">
+                        Logout
+                    </button>
+
+                }
+                else
+                {
+                    if (HttpContext.Current.Request.Url.AbsolutePath != "/UserAccount/Login")
+                    {
+                        <button onclick="location.href='@Url.Action("Login", "UserAccount")'"
+                                type="button" class="btn btn-secondary ">
+                            Login
+                        </button>
+                    }
+
+                    if (HttpContext.Current.Request.Url.AbsolutePath != "/UserAccount/Register")
+                    {
+                        <button type="button"
+                                style="border:2.1px solid black"
+                                onclick="location.href='@Url.Action("Register", "UserAccount")'"
+                                class="btn btn-primary ">
+                            Create Account
+                        </button>
+                    }
+                }
             }
+
 
 
         </div>
     </nav>
-        @RenderBody()
 
+
+    @RenderBody()
+    <div class="full bg-secondary shadow-lg fixed-bottom" style="padding:10px;bottom:0;text-align:right">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn \"
+                    onclick="location.href='@Url.Action("About", "Home")'">
+                About
+            </button>
+            <button type="button" 
+                    onclick="location.href='@Url.Action("Privacy", "Home")'"
+                    class="btn">
+                Privacy Policy
+            </button>
+            <button type="button"
+                    onclick="location.href='@Url.Action("Contact", "Home")'"
+                    class="btn">
+                Support
+            </button>
+        </div>
+    </div>
+    <div class=" bg-secondary mob m-2 pb-2 shadow-lg fixed-bottom row" style="bottom:0;overflow-x:hidden">
+
+        <div class="col-3 text-center mt-2" style="border-right:1px solid #bebebe">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                 width="35" height="35"
+                 viewBox="0 0 172 172"
+                 onclick="location.href='@Url.Action("Search", "Home",new { id=1})'"
+                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#666666"><path d="M64.5,14.33333c-27.6214,0 -50.16667,22.54527 -50.16667,50.16667c0,27.6214 22.54527,50.16667 50.16667,50.16667c12.52732,0 23.97256,-4.67249 32.7819,-12.31771l3.05143,3.05143v9.26628l40.03256,40.03256c3.95599,3.95599 10.37733,3.956 14.33333,0c3.956,-3.956 3.956,-10.37733 0,-14.33333l-40.03256,-40.03256h-9.26628l-3.05143,-3.05143c7.64521,-8.80934 12.31771,-20.25458 12.31771,-32.7819c0,-27.6214 -22.54527,-50.16667 -50.16667,-50.16667zM64.5,28.66667c19.87509,0 35.83333,15.95824 35.83333,35.83333c0,19.87509 -15.95825,35.83333 -35.83333,35.83333c-19.87509,0 -35.83333,-15.95825 -35.83333,-35.83333c0,-19.87509 15.95824,-35.83333 35.83333,-35.83333z"></path></g></g></svg>
+
+        </div>
+        <div class="col-3 text-center mt-2" style="border-right:1px solid #bebebe">
+            <svg onclick="location.href='@Url.Action("Trends", "Home")'"
+                 xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                 width="35" height="35"
+                 viewBox="0 0 172 172"
+                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#333333"><path d="M46.30769,19.84615c-14.54868,0 -26.46154,11.91286 -26.46154,26.46154v79.38462c0,14.54868 11.91286,26.46154 26.46154,26.46154h79.38462c14.54868,0 26.46154,-11.91286 26.46154,-26.46154v-79.38462c0,-14.54868 -11.91286,-26.46154 -26.46154,-26.46154zM59.53846,46.30769h13.23077v13.23077h26.46154v-13.23077h13.23077v13.23077h13.23077v13.23077h-13.23077v26.46154h13.23077v13.23077h-13.23077v13.23077h-13.23077v-13.23077h-26.46154v13.23077h-13.23077v-13.23077h-13.23077v-13.23077h13.23077v-26.46154h-13.23077v-13.23077h13.23077zM72.76923,72.76923v26.46154h26.46154v-26.46154z"></path></g></g></svg>
+        </div>
+        <div class="col-3 text-center mt-2" style="border-right:1px solid #bebebe">
+            <svg onclick="location.href='@Url.Action("Browse", "Home")'"
+                 xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                 width="35" height="35"
+                 viewBox="0 0 172 172"
+                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#333333"><path d="M86,6.88c-39.85724,0 -72.24,32.38276 -72.24,72.24c0,29.59175 17.82021,55.0769 43.34265,66.22672c1.13286,0.53389 2.46635,0.41001 3.48147,-0.32343c1.01512,-0.73344 1.5515,-1.96057 1.40038,-3.20378c-0.15113,-1.24321 -0.96588,-2.30609 -2.12716,-2.77497c-23.07787,-10.08187 -39.21735,-33.0934 -39.21735,-59.92453c0,-36.13924 29.22076,-65.36 65.36,-65.36c36.13924,0 65.36,29.22076 65.36,65.36c0,26.83113 -16.13948,49.84267 -39.21735,59.92453c-1.16128,0.46888 -1.97603,1.53176 -2.12716,2.77497c-0.15113,1.24321 0.38525,2.47034 1.40038,3.20378c1.01512,0.73344 2.34862,0.85733 3.48147,0.32343c25.52245,-11.14981 43.34265,-36.63497 43.34265,-66.22672c0,-39.85724 -32.38276,-72.24 -72.24,-72.24zM86,24.08c-30.34446,0 -55.04,24.69554 -55.04,55.04c0,19.56673 10.25116,36.80522 25.67906,46.56094c1.60672,1.01672 3.73343,0.53844 4.75015,-1.06828c1.01672,-1.60672 0.53844,-3.73343 -1.06828,-4.75015c-13.50249,-8.5382 -22.48094,-23.57691 -22.48094,-40.7425c0,-26.62194 21.53806,-48.16 48.16,-48.16c26.62194,0 48.16,21.53806 48.16,48.16c0,17.16559 -8.97844,32.2043 -22.48094,40.7425c-1.60672,1.01672 -2.085,3.14344 -1.06828,4.75015c1.01672,1.60672 3.14344,2.085 4.75015,1.06828c15.42791,-9.75572 25.67906,-26.9942 25.67906,-46.56094c0,-30.34446 -24.69554,-55.04 -55.04,-55.04zM86,61.92c-9.4993,0 -17.2,7.7007 -17.2,17.2c0,9.4993 7.7007,17.2 17.2,17.2c9.4993,0 17.2,-7.7007 17.2,-17.2c0,-9.4993 -7.7007,-17.2 -17.2,-17.2zM86,103.2c-9.48408,0 -17.2,8.69535 -17.2,19.39031c0,13.53296 4.54881,33.12182 4.68297,33.62062c0.57448,4.27248 3.93079,12.34906 12.51703,12.34906c8.58624,0 11.93729,-8.07761 12.44985,-12.01985c0.19608,-0.82904 4.75015,-20.42032 4.75015,-33.94984c0,-10.69496 -7.71592,-19.39031 -17.2,-19.39031z"></path></g></g></svg>
+        </div>
+
+        @if (Session["uid"] != null)
+        {<div class="col-3 text-center mt-2" onclick="location.href='@Url.Action("UserProfile", "UserAccount", new { uid = Session["uid"],uname=Session["uname"] })'">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px",
+                     width="35" height="35"
+                     viewBox="0 0 172 172"
+                     fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#333333"><path d="M86,21.5c-17.7627,0 -32.25,14.4873 -32.25,32.25c0,17.7627 14.4873,32.25 32.25,32.25c17.7627,0 32.25,-14.4873 32.25,-32.25c0,-17.7627 -14.4873,-32.25 -32.25,-32.25zM86,86c-29.60449,0 -53.75,24.14551 -53.75,53.75h10.75c0,-23.80957 19.19043,-43 43,-43c23.80957,0 43,19.19043 43,43h10.75c0,-29.60449 -24.14551,-53.75 -53.75,-53.75zM86,32.25c11.92578,0 21.5,9.57422 21.5,21.5c0,11.92578 -9.57422,21.5 -21.5,21.5c-11.92578,0 -21.5,-9.57422 -21.5,-21.5c0,-11.92578 9.57422,-21.5 21.5,-21.5z"></path></g></g></svg>
+            </div>
+
+        }
+        else
+        {
+            <div class="col-3 text-center mt-2">
+
+                @if (HttpContext.Current.Request.Url.AbsolutePath != "/UserAccount/Login" &&
+                    HttpContext.Current.Request.Url.AbsolutePath != "/Blog/MegaBlog"
+                    )
+                {<svg onclick="location.href='@Url.Action("Login", "UserAccount")'"
+                      xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                      width="35" height="35"
+                      viewBox="0 0 172 172"
+                      style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#333333"><path d="M86.06047,6.81953c-32.95754,0 -61.25006,20.24078 -73.11344,48.97969c-0.99687,2.28346 -0.68141,4.92742 0.82472,6.91224c1.50613,1.98482 3.96759,3.00035 6.4351,2.65495c2.46751,-0.3454 4.55552,-1.99776 5.45877,-4.31984c9.79487,-23.72797 33.06295,-40.46703 60.39484,-40.46703c36.17891,0 65.36,29.18109 65.36,65.36c0,36.17891 -29.18109,65.36 -65.36,65.36c-27.32814,0 -50.60017,-16.73282 -60.39484,-40.46031c-0.90325,-2.32208 -2.99126,-3.97444 -5.45877,-4.31984c-2.46751,-0.3454 -4.92897,0.67013 -6.4351,2.65495c-1.50613,1.98482 -1.82159,4.62878 -0.82472,6.91224c11.86357,28.73938 40.15901,48.97297 73.11344,48.97297c43.61533,0 79.12,-35.50467 79.12,-79.12c0,-43.61533 -35.50467,-79.12 -79.12,-79.12zM92.75235,54.91235c-2.79963,0.00073 -5.31968,1.69768 -6.37316,4.29154c-1.05348,2.59386 -0.43032,5.5674 1.57597,7.52002l12.33563,12.33563h-86.59125c-2.48118,-0.03509 -4.78904,1.2685 -6.03987,3.41161c-1.25083,2.1431 -1.25083,4.79369 0,6.93679c1.25083,2.1431 3.55869,3.4467 6.03987,3.41161h86.59125l-12.33563,12.33562c-1.79729,1.72563 -2.52126,4.28806 -1.89272,6.69907c0.62854,2.41101 2.51139,4.29386 4.9224,4.9224c2.41101,0.62854 4.97344,-0.09544 6.69907,-1.89272l24.08,-24.08c2.68573,-2.68685 2.68573,-7.0419 0,-9.72875l-24.08,-24.08c-1.2953,-1.3315 -3.07395,-2.0827 -4.93156,-2.08281z"></path></g></g></svg>
+
+                }
+
+                else if (HttpContext.Current.Request.Url.AbsolutePath != "/UserAccount/Register")
+                {
+                    <svg onclick="location.href='@Url.Action("Register", "UserAccount")'"
+                         xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                         width="32" height="32"
+                         viewBox="0 0 172 172"
+                         style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#333333"><path d="M64.5,10.75c-20.72315,0 -37.625,16.90185 -37.625,37.625c0,12.95459 6.61377,24.46045 16.62891,31.24219c-19.16943,8.23047 -32.75391,27.25293 -32.75391,49.38281h10.75c0,-23.80957 19.19043,-43 43,-43c7.39063,0 14.27734,1.93164 20.32422,5.20703c-5.96289,7.39063 -9.57422,16.83887 -9.57422,27.04297c0,23.68359 19.31641,43 43,43c23.68359,0 43,-19.31641 43,-43c0,-23.68359 -19.31641,-43 -43,-43c-9.38526,0 -18.11963,3.08643 -25.19531,8.23047c-2.37256,-1.49072 -4.95508,-2.75049 -7.55859,-3.86328c10.01514,-6.78174 16.62891,-18.2876 16.62891,-31.24219c0,-20.72315 -16.90185,-37.625 -37.625,-37.625zM64.5,21.5c14.90723,0 26.875,11.96778 26.875,26.875c0,14.90723 -11.96777,26.875 -26.875,26.875c-14.90722,0 -26.875,-11.96777 -26.875,-26.875c0,-14.90722 11.96778,-26.875 26.875,-26.875zM118.25,86c17.86768,0 32.25,14.38232 32.25,32.25c0,17.86768 -14.38232,32.25 -32.25,32.25c-17.86768,0 -32.25,-14.38232 -32.25,-32.25c0,-17.86768 14.38232,-32.25 32.25,-32.25zM112.875,96.75v16.125h-16.125v10.75h16.125v16.125h10.75v-16.125h16.125v-10.75h-16.125v-16.125z"></path></g></g></svg>
+                }
+            </div>
+        }
+
+    </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

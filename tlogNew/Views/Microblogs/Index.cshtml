@@ -1,0 +1,65 @@
+﻿@model IEnumerable<tlogNew.Models.Microblog>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="jumbotron container bg-secondary">
+    <h2 style="display:inline-block">MicroBlgs Handling</h2>
+
+    <hr />
+    <table class="table container" style="overflow-x:scroll">
+        <tr class="table-active">
+            <th>
+                @Html.DisplayNameFor(model => model.uid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.uname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.reads)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tag)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="table-secondary">
+                <td>
+                    @Html.DisplayFor(modelItem => item.uid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.uname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.title)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.reads)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tag)
+                </td>
+                <td class="text-info" style="color:blue">
+                    <u>@Html.ActionLink("Details", "Details", new { id = item.bid })</u> 
+                    <u>@Html.ActionLink("Delete", "Delete", new { id = item.bid })</u>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

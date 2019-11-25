@@ -1,0 +1,99 @@
+﻿@model tlogNew.Models.User
+@{
+    ViewBag.Title = Model.username + " - blogphins";
+}
+
+<div class="mob">
+    <div class="mb-3">
+        <a style="font-size:3vh" class="text-lowercase pr-3" href="/">
+            <img src="https://img.icons8.com/ios-filled/60/000000/dolphin.png">
+        </a>
+        <h4 class="d-inline-block mt-3 text-lowercase">blog <kbd>phins</kbd></h4>
+    </div>
+    <div class="row">
+        <div class="col-4 border border-dark">
+            <a href="/UserAccount/Settings" class="">
+                Edit Account Details
+            </a>
+        </div>
+        <div class="col-4 border border-dark">
+            <a href="/UserAccount/ChangePassword" class=" ">
+                Change Password
+            </a>
+        </div>
+        <div class="col-4 bg-dark ">
+            <a href="/UserAccount/Delete" class="text-white">
+                Delete Account
+            </a>
+        </div>
+    </div>
+    <div class="col-12 mt-4 pt-3 bg-secondary" >
+        <p style="font-size:2vh" class="text-secondary text-capitalize">Delete Account</p>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <p class="text-warning " style="font-size:2vh
+                    ;font-weight:900">
+                Do you Really Want to
+                Delete your Account? You will not be able to recover it !
+            </p>
+            <p style="font-size:1.5vh">
+                Write your <span class="text-dark" style="
+                    font-weight:900">Username</span> To Confirm Delete
+            </p>
+            <input required type="text" class="form-control mb-3" name="confirm"
+                   placeholder="Type your Username here" id="inputDefault">
+
+            <p class="text-danger">@ViewBag.delete</p>
+            <hr />
+            <button type="submit" class="float-right btn btn-danger">Delete Account</button>
+        }
+        <p class="text-success">@ViewBag.update</p>
+    </div>
+</div>
+<div class="jumbotron full bg-light container ">
+
+    <div class="row">
+        <div class="col-4">
+            <h4 class="mb-3 text-dark">Account Settings</h4>
+            <div class="list-group">
+                <a href="/UserAccount/Settings" class="list-group-item list-group-item-action ">
+                    Edit Account Details
+                </a>
+                <a href="/UserAccount/ChangePassword" class="list-group-item list-group-item-action  ">
+                    Change Password
+                </a>
+                <a href="/UserAccount/Delete" class="list-group-item list-group-item-action active ">
+                    Delete Account
+                </a>
+            </div>
+        </div>
+        <div class="col-6 ">
+            <p style="font-size:2vh" class="text-secondary text-capitalize">Delete Account</p>
+            <hr />
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <p class="text-warning " style="font-size:2vh
+                    ;font-weight:900">
+                    Do you Really Want to
+                    Delete your Account? You will not be able to recover it !
+                </p>
+                <p style="font-size:1.5vh">
+                    Write your <span class="text-dark" style="
+                    font-weight:900">Username</span> To Confirm Delete
+                </p>
+                <input required type="text" class="form-control mb-3" name="confirm"
+                       placeholder="Type your Username here" id="inputDefault">
+
+                <p class="text-danger">@ViewBag.delete</p>
+                <hr />
+                <button type="submit" class="float-right btn btn-danger">Delete Account</button>
+            }
+            <p class="text-success">@ViewBag.update</p>
+        </div>
+    </div>
+
+</div>
+

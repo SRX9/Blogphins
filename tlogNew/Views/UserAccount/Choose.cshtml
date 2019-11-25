@@ -16,7 +16,7 @@
 
 
 
-<div class="jumbotron " style="overflow:hidden">
+<div class="jumbotron full" style="overflow:hidden">
     <h2 class="text-dark"><kbd>Choose</kbd> Blog Type</h2>
     <hr />
     <div style="text-align:center;">
@@ -32,9 +32,24 @@
 
     </div>
     <hr />
-    <div style="">
-        <p>&copy; @DateTime.Now.Year - tlogs</p>
-    </div>
+
 </div>
 
+<div class="jumbotron mob">
+    <h4 class="text-dark"><kbd>Choose</kbd> Blog Type</h4>
+    <hr />
+    <div style="text-align:center;">
+        <img width="auto"
+             onclick="location.href='@Url.Action("CreateMicroBlog", "UserAccount")'"
+             class="boxi" height="130px" style="padding:15px;"
+             src="@Url.Content("~/Content/images/micro.png")" alt="" />
+
+
+        <img width="auto" class="boxi" height="130x" style="padding:15px;"
+             onclick="location.href='@Url.Action("CreateMegaBlog", "UserAccount")'"
+             src="@Url.Content("~/Content/images/mega.png")" alt="" />
+
+    </div>
+    <hr />
+</div>
 

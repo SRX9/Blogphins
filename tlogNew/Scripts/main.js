@@ -11,6 +11,7 @@ tinymce.init({
     init_instance_callback: function (editor) {
         $(editor.getContainer()).find('button.tox-statusbar__wordcount').click();  // if you use jQuery
     },
+
 });
 
 
@@ -37,7 +38,7 @@ tinymce.init({
         '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
         '//www.tiny.cloud/css/codepen.min.css'
     ],
-    height: 800,
+    height: 900,
     image_caption: true,
     quickbars_selection_toolbar: 'bold italic | quicklink h1 link h2 h3 blockquote quickimage quicktable',
     toolbar_drawer: 'sliding',

@@ -1,0 +1,75 @@
+﻿@model tlogNew.Models.Megablog
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="jumbotron container bg-secondary">
+    <h2>Details</h2>
+
+    <div>
+        <h4>Megablog</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.uid)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.uid)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.uname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.uname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.time)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.time)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.text)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.text)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.reads)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.reads)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.category)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.category)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+</div>

@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron container">
+    <h1><kbd>Blogphins</kbd> Admin Panel</h1>
+    <hr />
+    <h3 class="text-secondary text-capitalize mb-4">Choose what to Handle</h3>
+    <div class="row ">
+        <div
+             onclick="location.href='@Url.Action("Index", "Users")'"
+             style="cursor:pointer" class="col-sm-3 bg-secondary text-center m-3">
+            <img src="https://img.icons8.com/pastel-glyph/250/000000/groups.png">
+            <h3>Users</h3>
+        </div>
+        <div 
+             onclick="location.href='@Url.Action("Index", "Microblogs")'"
+             style="cursor:pointer" class="col-sm-3 bg-secondary text-center m-3">
+            <img src="https://img.icons8.com/material-outlined/250/000000/blog.png">
+            <h3>MicroBlogs</h3>
+        </div>
+        <div 
+             onclick="location.href='@Url.Action("Index", "MegaBlogs")'"
+             style="cursor:pointer" class="col-sm-3 bg-secondary text-center   m-3">
+            <img src="https://img.icons8.com/ios-filled/250/000000/blog.png">
+            <h3>Mega Blogs</h3>
+        </div>
+        </div>
+    </div>
+

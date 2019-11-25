@@ -78,10 +78,6 @@ C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\EntityFramework.dll
 C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\EntityFramework.SqlServer.dll
 C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\EntityFramework.xml
 C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\EntityFramework.SqlServer.xml
-C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\obj\Debug\tlogNew.Migrations.InitialCreate.resources
-C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\obj\Debug\tlogNew.csproj.GenerateResource.cache
-C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\obj\Debug\tlogNew.Migrations.manytomany.resources
-C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\obj\Debug\tlogNew.Migrations.UpdatedModels.resources
-C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\obj\Debug\tlogNew.Migrations.UpdatedModelsnew.resources
-C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\obj\Debug\tlogNew.Migrations.Udatelatest.resources
 C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\MaterialIcons.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Net.Http.Formatting.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Net.Http.Formatting.xml

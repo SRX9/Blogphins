@@ -1,11 +1,28 @@
-﻿body {
-    width:100vw;
+﻿
+body{
+    height:100vh;
     overflow-x:hidden;
+    overflow-y:scroll;
+}
+@media only screen and (min-width: 1050px) {
+    .full {
+        display: normal;
+    }
+    .edi{
+        padding-left:15%;
+        padding-right:15%;
+    }
+    .mob {
+        display: none;
+    }
+}
 
+@media only screen and (max-width: 1050px) {
+    .full {
+        display:none;
+    }
+    .mob{
+        display:normal;
+    }
 }
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
+

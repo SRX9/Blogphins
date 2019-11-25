@@ -7,6 +7,9 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using tlogNew.Models;
+using System.Net.Http;
+
+
 
 namespace tlogNew.Controllers
 {
@@ -59,7 +62,33 @@ namespace tlogNew.Controllers
                     db.SaveChanges();
                     Session["uid"] = user.id;
                     Session["uname"] = user.username;
-                    return RedirectToAction("UserProfile", "UserAccount", new { uid = Session["uid"] });
+
+                    nodemicro obj = new nodemicro()
+                    {
+                        title = user.username,
+                        id = 0,
+                        type = 1
+                    };
+
+                    using (HttpClient client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri("http://localhost:3000/");
+                        var postTask = client.PostAsJsonAsync<nodemicro>("getSearchBuf", obj);
+                        postTask.Wait();
+
+                        var result = postTask.Result;
+                        if (result.IsSuccessStatusCode)
+                        {
+                            return RedirectToAction("UserProfile", "UserAccount", new { uid = Session["uid"] });
+                        }
+                        else
+                        {
+                            ViewBag.post = "Sorry for technical fault." +
+                                "Try Again Later.";
+                            return View();
+                        }
+                    }
+                   
                 }
 
             }
@@ -122,7 +151,7 @@ namespace tlogNew.Controllers
 
         //User profile render
 
-        public ActionResult UserProfile(int? uid)
+        public ActionResult UserProfile(int? uid,string uname)
         { 
             if(!uid.HasValue)
             {
@@ -132,12 +161,20 @@ namespace tlogNew.Controllers
             using (Model1 db = new Model1())
             {
                     User usr = db.user.FirstOrDefault(u => u.id == uid);
+                        
+
+                    
                     if(usr==null)
                     {
-                        return RedirectToAction("Error");
+                        usr = db.user.FirstOrDefault(u => u.username == uname);
+                        if(usr==null)
+                         {
+                        return RedirectToAction("Index");
                     }
-                    List<Microblog> microblog = db.microblog.Where(u => u.uid == uid).OrderByDescending(x=>x.time).Take(40).ToList();
-                    List<Megablog> megablog = db.megablog.Where(u => u.uid == uid).OrderByDescending(x => x.time).Take(40).ToList();
+       
+                    }
+                    List<Microblog> microblog = db.microblog.Where(u => u.uid== usr.id).OrderByDescending(x=>x.time).Take(40).ToList();
+                    List<Megablog> megablog = db.megablog.Where(u => u.uid == usr.id).OrderByDescending(x => x.time).Take(40).ToList();
 
                     Both obj = new Both();
 
@@ -173,7 +210,6 @@ namespace tlogNew.Controllers
 
             }
         }
-
         [HttpPost]
         public ActionResult Settings(User user)
         {
@@ -190,14 +226,14 @@ namespace tlogNew.Controllers
                     User usr = (from p in db.user
                                 where p.id.ToString() == id
                                 select p).SingleOrDefault();
-                    if(user!=usr)
+                    if(user.bio!=usr.bio || user.username!=usr.username||user.email!=usr.email)
                     {
                         usr.username = user.username;
                         usr.email = user.email;
                         usr.bio = user.bio;
                         db.SaveChanges();
                         Session["uname"] = user.username;
-
+                        ViewBag.update = "Updated Successfully";
                     }
 
   
@@ -206,6 +242,267 @@ namespace tlogNew.Controllers
 
             }
         }
+
+        //Change Password
+        public ActionResult ChangePassword()
+        {
+            ViewBag.update = "";
+            if (Session["uid"] == null)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                using (Model1 db = new Model1())
+                {
+                    string id = Session["uid"].ToString();
+                    User usr = db.user.FirstOrDefault(u => u.id.ToString() == id);
+                    return View(usr);
+                }
+
+            }
+        }
+        [HttpPost]
+        public ActionResult ChangePassword(FormCollection Request)
+        {
+            ViewBag.old = "";
+            ViewBag.update = "";
+            if (Session["uid"] == null)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                
+                using (Model1 db = new Model1())
+                {
+                    string id = Session["uid"].ToString();
+
+                    User usr = (from p in db.user
+                                where p.id.ToString() == id
+                                select p).SingleOrDefault();
+                    if (Request["old"] !=usr.password)
+                    {
+                        ViewBag.old = "Old Password incorrect!";
+                        return View(usr);
+                    }
+                    else
+                    {
+                        if(Request["new"]!=Request["confirm"])
+                        {
+                            ViewBag.match = "Password Dosen't Match!";
+                            return View(usr);
+                        }
+                        else
+                        {
+                            usr.password = Request["new"];
+                            db.SaveChanges();
+                            ViewBag.update = "Password Changed Succefully.";
+                            return View(usr);
+                        }
+                    }
+
+
+                }
+
+            }
+        }
+
+
+        //Delete Account
+        public ActionResult Delete()
+        {
+            ViewBag.delete = "";
+            if (Session["uid"] == null)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                using (Model1 db = new Model1())
+                {
+                    string id = Session["uid"].ToString();
+                    User usr = db.user.FirstOrDefault(u => u.id.ToString() == id);
+                    return View(usr);
+                }
+
+            }
+        }
+        [HttpPost]
+        public ActionResult Delete(FormCollection Request)
+        {
+            ViewBag.delete = "";
+            if (Session["uid"] == null)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+
+                using (Model1 db = new Model1())
+                {
+                    string id = Session["uid"].ToString();
+
+                    User usr = (from p in db.user
+                                where p.id.ToString() == id
+                                select p).SingleOrDefault();
+
+                    if(usr.username!=Request["confirm"])
+                    {
+                        ViewBag.delete = "Incorrect Username.";
+                        return View(usr);
+                    }
+                    else
+                    {
+                        var obj = db.user.Where(a => a.id.ToString() == id).Single();
+                        db.user.Remove(obj);
+                        db.SaveChanges();
+                        Session.Clear();
+                        return RedirectToAction("Index");
+                    }
+
+                }
+
+            }
+        }
+
+
+        //Delete Blogs
+        public ActionResult DeleteMicro(int? bid)
+        {   
+            ViewBag.delete = "";
+            if (Session["uid"] == null || !bid.HasValue)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                ViewBag.bid = bid;
+                return View();
+
+            }
+        }
+        [HttpPost]
+        public ActionResult DeleteMicro(FormCollection Request)
+        {
+            ViewBag.delete = "";
+            if (Session["uid"] == null)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+
+                using (Model1 db = new Model1())
+                {
+                    string id = Session["uid"].ToString();
+
+                    User usr = (from p in db.user
+                                where p.id.ToString() == id
+                                select p).FirstOrDefault();
+
+                    if (usr.username != Request["confirm"])
+                    {
+                        ViewBag.delete = "Incorrect Username.";
+                        return View(usr);
+                    }
+                    else
+                    {
+                        string ii = Request["bid"];
+                        Microblog obj = db.microblog.Where(a => a.bid.ToString() == ii )
+                            .FirstOrDefault();
+                       
+
+                        Tag tag = db.tag.Where(v => v.bid.ToString() == ii).FirstOrDefault();
+                        if(tag==null)
+                        {
+                            Tag tag1 = db.tag.Where(v => v.title==obj.title).FirstOrDefault();
+                            db.tag.Remove(tag1);
+                        }
+                        else
+                        {
+                            db.tag.Remove(tag);
+                        }
+                        
+                        db.microblog.Remove(obj);
+                        
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+
+                }
+
+            }
+        }
+
+
+        public ActionResult DeleteMega(int? bid)
+        {
+            ViewBag.delete = "";
+            if (Session["uid"] == null || !bid.HasValue)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                ViewBag.bid = bid;
+                return View();
+
+            }
+        }
+        [HttpPost]
+        public ActionResult DeleteMega(FormCollection Request)
+        {
+            ViewBag.delete = "";
+            if (Session["uid"] == null)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+
+                using (Model1 db = new Model1())
+                {
+                    string id = Session["uid"].ToString();
+
+                    User usr = (from p in db.user
+                                where p.id.ToString() == id
+                                select p).FirstOrDefault();
+
+                    if (usr.username != Request["confirm"])
+                    {
+                        ViewBag.delete = "Incorrect Username.";
+                        return View(usr);
+                    }
+                    else
+                    {
+                        string ii = Request["bid"];
+                        Megablog obj = db.megablog.Where(a => a.bid.ToString() == ii)
+                            .FirstOrDefault();
+                        
+
+                        Category cat = db.category.Where(v => v.bid.ToString() == ii).FirstOrDefault();
+                        if (cat == null)
+                        {
+                            Category cat1 = db.category.Where(v => v.title == obj.title).FirstOrDefault();
+                            db.category.Remove(cat1);
+                        }
+                        else
+                        {
+                            db.category.Remove(cat);
+                        }
+
+
+                        db.megablog.Remove(obj);
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+
+                }
+
+            }
+        }
+
 
 
         //Logout
@@ -256,6 +553,7 @@ namespace tlogNew.Controllers
         [HttpPost]
         public ActionResult CreateMicroBlog(Microblog blog)
         {
+            ViewBag.post = "";
             ViewBag.error = "";
             if (Session["uid"] != null)
             {
@@ -300,15 +598,43 @@ namespace tlogNew.Controllers
                             t.reads = blog.reads;
                             db.tag.Add(t);
                             db.SaveChanges();
+
+                            nodemicro obj = new nodemicro() {
+                                title = blog.title,
+                                id=newB.bid,
+                                type=2
+                            };
+
+                            using (HttpClient client = new HttpClient())
+                            {
+                                client.BaseAddress = new Uri("http://localhost:3000/");
+                                var postTask = client.PostAsJsonAsync<nodemicro>("getSearchBuf", obj);
+                                postTask.Wait();
+
+                                var result = postTask.Result;
+                                if (result.IsSuccessStatusCode)
+                                {
+                                    return RedirectToAction("UserProfile", "UserAccount", new { uid = Session["uid"] });
+                                }
+                                else
+                                {
+                                    ViewBag.post = "Sorry for technical fault." +
+                                        "Try Again Later.";
+                                    return View();
+                                }
+                            }
+
+
                         }
-                        return RedirectToAction("UserProfile", "UserAccount", new { uid = Session["uid"] });
+                        
 
                     }
                 }
                 catch(Exception e)
                 {
                     Console.WriteLine(e.ToString());
-                    ViewBag.error = "Minimum 10 character required";
+                    ViewBag.error = "Sorry for technical fault." +
+                                        "Try Again Later.";
                     return View();
                 }
 
@@ -389,8 +715,35 @@ namespace tlogNew.Controllers
                     c.reads = newB.reads;
                     db.category.Add(c);
                     db.SaveChanges();
+
+                    nodemicro obj = new nodemicro()
+                    {
+                        title = blog.title,
+                        id = newB.bid,
+                        type = 3
+                    };
+
+                    using (HttpClient client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri("http://localhost:3000/");
+                        var postTask = client.PostAsJsonAsync<nodemicro>("getSearchBuf", obj);
+                        postTask.Wait();
+
+                        var result = postTask.Result;
+                        if (result.IsSuccessStatusCode)
+                        {
+                            return RedirectToAction("UserProfile", "UserAccount", new { uid = Session["uid"] });
+                        }
+                        else
+                        {
+                            ViewBag.post = "Sorry for technical fault." +
+                                "Try Again Later.";
+                            return View();
+                        }
+                    }
                 }
-                return RedirectToAction("UserProfile", "UserAccount", new { uid = Session["uid"] });
+
+                
 
             }
             else
