@@ -1,6 +1,6 @@
 ﻿@model tlogNew.Models.Megablog
 @{
-    ViewBag.Title = "Write - tlogs";
+    ViewBag.Title = "blogphins";
 }
 
 <style>
@@ -16,22 +16,22 @@
 
 
 
-<div class="jumbotron full" style="overflow:hidden">
+<div class="jumbotron bg-transparent full" style="overflow:hidden">
     <h2 class="text-dark"><kbd>Choose</kbd> Blog Type</h2>
     <hr />
     <div style="text-align:center;">
         <img width="auto"
              onclick="location.href='@Url.Action("CreateMicroBlog", "UserAccount")'"
-             class="boxi" height="650px" style="padding:15px;"
-             src="@Url.Content("~/Content/images/micro.png")" alt="" />
+             class="boxi p-3 shadow m-3" height="500px" style="padding:15px;border-radius:50px"
+             src="https://i.ibb.co/kHVjqKr/Travel-Blog-Title-i-Phone-Layout-1.png" alt="" />
 
 
-        <img width="auto" class="boxi" height="650px" style="padding:15px;"
+        <img width="auto" class="p-3 m-3 boxi shadow" height="500px" style="padding:15px;border-radius:50px"
              onclick="location.href='@Url.Action("CreateMegaBlog", "UserAccount")'"
-             src="@Url.Content("~/Content/images/mega.png")" alt="" />
+             src="https://i.ibb.co/JsqKN4r/Blogging-Tips-Linked-In-Post-Header-2.png" alt="" />
 
     </div>
-    <hr />
+  
 
 </div>
 

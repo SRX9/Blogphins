@@ -1,0 +1,159 @@
+﻿@model tlogNew.Models.User
+
+@{
+    ViewBag.Title = "Register | blogphins";
+}
+
+<div class="row full" style="padding-top:4%">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="container mt-5 jumbotron shadow br bg-secondary ">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h1 style="display:inline-block" class="text-secondary">Create Account</h1>
+                    <img class="float-right" style="display:inline-block"
+                         src="https://img.icons8.com/ios-filled/40/000000/dolphin.png">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        
+                            @Html.EditorFor(model => model.username, 
+                           new { htmlAttributes = new { @class = "br form-control",
+                           placeholder ="User Name" } })
+                            @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                            <p class="text-danger">@ViewBag.exists</p>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="">
+                            @Html.EditorFor(model => model.bio, 
+                           new { htmlAttributes = new { placeholder = "Bio", @class = "br form-control" } })
+                            @Html.ValidationMessageFor(model => model.bio, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="">
+                            @Html.EditorFor(model => model.email, 
+                           new { htmlAttributes = new { placeholder = "Email Id", @class = " br form-control" } })
+                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                            <p class="text-danger">@ViewBag.email</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="">
+                            @Html.EditorFor(model => model.password, 
+                           new { htmlAttributes = new { placeholder = "Password", @class = "br form-control" } })
+                            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-4">
+                        <div class="">
+                            <input 
+                                   style="border-radius:50px"
+                                   type="submit" value="Create" class="btn w-100
+                                   btn-default btn-primary" />
+                        </div>
+                    </div>
+   
+            }
+            <hr />
+            <div class="float-right">
+                <p style="font-size:1.8vh;font-weight:900" class="container">
+                    Already Have an Account
+                    <span class="text-info "
+                          style="cursor:pointer;font-weight:900" onclick="location.href='@Url.Action("Login", "UserAccount")'"><u>Sign in</u></span>
+                </p>
+            </div>
+        </div>
+        @ViewBag.err
+    </div>
+    <div class="col-sm-4"></div>
+
+</div>
+<div class="mob">
+    <div class="bg-transparent  mb-4 ml-2">
+        <a style="font-size:3vh" class=" d-inline-block text-lowercase pr-4" href="/">
+            <img src="https://img.icons8.com/ios-filled/80/000000/dolphin.png">
+        </a>
+        <h3 class="d-inline-block  mt-3 text-lowercase">blog <kbd>phins</kbd></h3>
+    </div>
+    <div class=" jumbotron shadow br bg-secondary">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h3 class="text-secondary" style="display:inline-block">Create Account</h3>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+
+                    @Html.EditorFor(model => model.username, new { htmlAttributes = new
+               { @class = "form-control br bg-light border-0",
+                   placeholder ="User Name" } })
+                    @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                    
+                    <p class="text-danger">@ViewBag.exists</p>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="">
+                    @Html.EditorFor(model => model.bio, new { htmlAttributes = new
+               { placeholder = "Bio", @class = "br border-0 bg-light form-control" } })
+                    @Html.ValidationMessageFor(model => model.bio, "", new { @class = "text-danger" })
+                    
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="">
+                    @Html.EditorFor(model => model.email, new { htmlAttributes = new
+               { placeholder = "Email Id", @class = "br border-0 bg-light form-control" } })
+                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                    <p class="text-danger">@ViewBag.email</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="">
+                    @Html.EditorFor(model => model.password, new { htmlAttributes = new {
+                   placeholder = "Password", @class = "br border-0 bg-light form-control"
+               } })
+                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                    
+                </div>
+            </div>
+
+            <div class="form-group mt-4">
+                <div class="">
+                    <input style="border-radius:50px" type="submit" value="Create" 
+                           class="btn btn-default btn-primary w-100" />
+                </div>
+            </div>
+
+        }
+        <hr />
+        <div class="float-right">
+            <p style="font-size:1.8vh;font-weight:900" class="container">
+                Already Have an Account
+                <span class="text-info "
+                      style="cursor:pointer;font-weight:900" onclick="location.href='@Url.Action("Login", "UserAccount")'"><u>Sign in</u></span>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

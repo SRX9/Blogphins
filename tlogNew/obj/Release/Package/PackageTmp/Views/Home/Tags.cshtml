@@ -1,0 +1,61 @@
+﻿@model tlogNew.Models.Taglist
+@{
+    ViewBag.Title = "#"+@ViewBag.tagname +" | blogphins";
+}
+
+<div class="mob">
+    <div class="mb-3">
+        <a style="font-size:3vh" class="text-lowercase pr-4" href="/">
+            <img src="https://img.icons8.com/ios-filled/80/000000/dolphin.png">
+        </a>
+        <h3 class="d-inline-block mt-3 text-lowercase">blog <kbd>phins</kbd></h3>
+    </div>
+    <hr />
+
+    <p  class="text-info text-lowercase" 
+       style="font-size:4.5vh;font-weight:900;">#@ViewBag.tagname</p>
+    <hr />
+    <div class="container">
+        <div class="row">
+            @foreach (var tag in Model.taglist)
+            {
+                <div class="w-100" style="cursor:pointer"
+                     onclick="location.href='@Url.Action("MicroBlog", "Blog", new {title=tag.title, id = tag.bid, })'">
+                    <div class="card rr mt-2 border-0 shadow bg-dark" style="padding:10px">
+                        <h4 class="text-capitalize text-light">@tag.title</h4>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0"><span class="text-light">@tag.reads</span> Reads</h5>
+                            <div class="card-text text-secondary">by @tag.uname</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+</div>
+<div class=" full jumbotron rr shadow  bg-secondary container">
+
+    <h1 class="text-info text-lowercase" style="display:inline-block">#@ViewBag.tagname</h1>
+    <h1 class="text-secondary" style="display:inline-block;float:right">@ViewBag.count</h1>
+    <hr />
+    <div class="container ">
+        <div class="row">
+            @foreach (var tag in Model.taglist)
+            {
+                <div class="col-xl-4 col-md-6 mb-4 " style="cursor:pointer"
+                     onclick="location.href='@Url.Action("MicroBlog", "Blog", new {title=tag.title, id = tag.bid, })'">
+                    <div class="card border-0 rr shadow bg-dark" style="padding:10px">
+                        <h3 class="text-capitalize text-light">@tag.title</h3>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0"><span class="text-light">@tag.reads</span> Reads</h5>
+                            <div class="card-text text-secondary">by @tag.uname</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>

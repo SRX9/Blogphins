@@ -1,13 +1,13 @@
 ﻿@model tlogNew.Models.User
 
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Login | blogphins";
 }
 
 
-<div class="row full">
+<div class="row full" style="padding-top:6%">
     <div class="col-sm-4"></div>
-    <div class="col-sm-4 container jumbotron bg-light">
+    <div  class="col-sm-4 mt-5 container shadow br jumbotron bg-secondary">
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
@@ -22,7 +22,7 @@
                     <div class="form-group">
                         <div class="">
                             @Html.EditorFor(model => model.username, new { htmlAttributes = new {
-                           placeholder = "Username",@class = "form-control" } })
+                           placeholder = "Username",@class = " br form-control" } })
                             @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                         <div class="">
                             @Html.EditorFor(model => model.password, new { htmlAttributes = new {
                            placeholder = "Password",
-                           @class = "form-control" } })
+                           @class = "form-control br" } })
                             @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -40,7 +40,8 @@
                     <div class="form-group mt-4">
                         <p class="text-danger">@ViewBag.error</p>
                         <div class="">
-                            <input type="submit" value="Login" class=" btn btn-default btn-success " />
+                            <input type="submit" value="Login" style="border-radius:50px" 
+                                   class="w-100 br btn btn-default btn-primary " />
                         </div>
                     </div>
                 </div>
@@ -70,13 +71,13 @@
         </a>
         <h3 class="d-inline-block mt-3 text-lowercase">blog <kbd>phins</kbd></h3>
     </div>
-    <div class=" container jumbotron">
+    <div class=" container bg-secondary shadow br jumbotron">
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
 
             <div class="form-horizontal">
-                <h1 style="display:inline-block;font-weight:bolder"><b>Login</b></h1>
+                <h3 class="text-secondary" style="display:inline-block;font-weight:bolder"><b>Login</b></h3>
 
                 <hr />
                 @ViewBag.a
@@ -84,25 +85,27 @@
                 <div class="form-group">
                     <div class="">
                         @Html.EditorFor(model => model.username, new { htmlAttributes = new {
-                       placeholder = "Username",@class = "form-control" } })
+                       placeholder = "Username",@class = "form-control br border-0 bg-light" } })
                         @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div class="">
                         @Html.EditorFor(model => model.password, new { htmlAttributes = new {
                        placeholder = "Password",
-                       @class = "form-control" } })
+                       @class = "form-control br bg-light border-0"
+                   } })
+
                         @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
+                
 
                 <div class="form-group mt-4">
                     <p class="text-danger">@ViewBag.error</p>
                     <div class="">
-                        <input type="submit" value="Login" class="w-100
+                        <input type="submit" style="border-radius:50px" 
+                               value="Login" class="w-100 
                                btn btn-default btn-primary " />
                     </div>
                 </div>

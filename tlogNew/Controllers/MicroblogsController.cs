@@ -109,7 +109,9 @@ namespace tlogNew.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            Tag tag = db.tag.Where(v => v.bid == id).FirstOrDefault();
             Microblog microblog = db.microblog.Find(id);
+            db.tag.Remove(tag);
             db.microblog.Remove(microblog);
             db.SaveChanges();
             return RedirectToAction("Index");

@@ -1,9 +1,9 @@
 ﻿@model tlogNew.Models.BrowseCat
 @{
-    ViewBag.Title = "CategoryAll";
+    ViewBag.Title = @ViewBag.cat + " | blogphins";
 }
 
-<div class="jumbotron full bg-light container">
+<div class="jumbotron shadow rr full bg-secondary container">
     <h1 class="text-info" style="display:inline-block">~ @ViewBag.cat</h1>
     <h1 class="text-secondary" style="display:inline-block;float:right">@ViewBag.count</h1>
     <hr />
@@ -11,9 +11,9 @@
         <div class="row">
             @foreach (var cat in Model.cats)
             {
-                <div class="col-xl-6 col-md-6 mb-4 " style="cursor:pointer"
+                <div class="col-xl-6 rr col-md-6 mb-4 " style="cursor:pointer"
                      onclick="location.href='@Url.Action("MegaBlog", "Blog", new {title=cat.title, id = cat.bid, })'">
-                    <div class="card border-0 shadow bg-dark" style="padding:15px">
+                    <div class="card rr border-0 shadow bg-dark" style="padding:15px">
                         <h3 class="text-capitalize text-light">@cat.title</h3>
                         <div class="card-body ">
                             <div style="display:inline-block">
@@ -41,13 +41,13 @@
 
 
 <div class="mob">
-    <div class="bg-transparent mb-4 ml-2">
+    <div class=" mb-4 ml-2">
         <a style="font-size:3vh" class=" d-inline-block text-lowercase pr-4" href="/">
             <img src="https://img.icons8.com/ios-filled/80/000000/dolphin.png">
         </a>
         <h3 class="d-inline-block mt-3 text-lowercase">blog <kbd>phins</kbd></h3>
     </div>
-    <div class="jumbotron mob bg-light ">
+    <div class="jumbotron mob bg-secondary ">
         <h4 class="text-info" style="display:inline-block">~ @ViewBag.cat</h4>
         <h3 class="text-secondary" style="display:inline-block;float:right">@ViewBag.count</h3>
         <hr />
@@ -55,7 +55,7 @@
         {
             <div class="mb-2 " style="cursor:pointer"
                  onclick="location.href='@Url.Action("MegaBlog", "Blog", new {title=cat.title, id = cat.bid, })'">
-                <div class="card border-0 shadow bg-dark" style="padding:15px">
+                <div class="card rr border-0 shadow bg-dark" style="padding:15px">
                     <h4 class="text-capitalize text-light">@cat.title</h4>
                     <div class="card-body ">
                         <div style="display:inline-block">

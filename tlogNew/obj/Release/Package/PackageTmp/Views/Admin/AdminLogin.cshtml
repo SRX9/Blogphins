@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "AdminLogin";
+}
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 jumbotron bg-light">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h1 style="display:inline-block;font-weight:bolder"><b>Admin Panel Login</b></h1>
+                <img class="float-right" style="display:inline-block"
+                     src="https://img.icons8.com/ios-filled/40/000000/dolphin.png">
+                <hr />
+            </div>
+            <input class="form-control" type="text" name="uname" placeholder="Admin Username"/>
+            <hr />
+            <input class="form-control" type="password" name="pass" placeholder="Password" />
+            <hr />
+            <input  type="submit" class="btn btn-success" value="Login"/> 
+            <p class="text-danger">@ViewBag.error</p>
+        }
+       
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+

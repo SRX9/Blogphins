@@ -1,0 +1,109 @@
+﻿@model tlogNew.Models.Browse
+@{
+    ViewBag.Title = "Browse | blogphins ";
+}
+
+<div class="jumbotron bg-transparent row full" style="margin-top:-1%">
+    <div class="col-sm-3">
+        <header class="bg-dark rr ">
+            <div class="rr pl-3 pt-3" style="padding:2%">
+                <h3 class="shadow text-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                         width="30" height="30"
+                         viewBox="0 0 172 172"
+                         style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M35.72135,21.40202c-3.95253,0.06178 -7.10881,3.312 -7.05469,7.26465v100.33333c0,7.83362 6.49972,14.33333 14.33333,14.33333h100.33333c2.58456,0.03655 4.98858,-1.32136 6.29153,-3.55376c1.30295,-2.2324 1.30295,-4.99342 0,-7.22582c-1.30295,-2.2324 -3.70697,-3.59031 -6.29153,-3.55376h-100.33333v-100.33333c0.02653,-1.93715 -0.73227,-3.80254 -2.10349,-5.17112c-1.37122,-1.36858 -3.23806,-2.12378 -5.17516,-2.09353zM143.19336,42.93001c-1.86189,0.05548 -3.62905,0.83363 -4.92708,2.1696l-23.59961,23.59961l-16.43294,-16.43294c-2.7988,-2.79764 -7.33531,-2.79764 -10.13411,0l-35.83333,35.83333c-1.8722,1.79752 -2.62637,4.46674 -1.97164,6.97823c0.65473,2.51149 2.61604,4.4728 5.12753,5.12753c2.51149,0.65473 5.18071,-0.09944 6.97823,-1.97165l30.76628,-30.76627l16.43294,16.43294c2.7988,2.79764 7.33531,2.79764 10.13411,0l28.66667,-28.66667c2.11962,-2.06035 2.75694,-5.21064 1.60486,-7.93287c-1.15207,-2.72224 -3.85719,-4.45797 -6.81189,-4.37084z"></path></g></g></svg>
+                    trending tags
+                </h3>
+            </div>
+        </header>
+
+
+        <ul class="list-group mt-3">
+            @{ int i = 1;}
+            @foreach (var t in Model.milist.tagtrend.Take(50))
+            {
+                
+                <li onclick="location.href='@Url.Action("Tags", "Home",new { tag=t.tag})'"
+                    style="cursor:pointer;font-size:2vh;font-weight:900" class="rr m-2 border-0 shadow text-info list-group-item d-flex justify-content-between align-items-center">
+                    <span class="text-info">#@i</span>  @t.tag
+                    @{ i++;}
+                    <span class="badge badge-primary badge-pill">@t.count</span>
+                </li>
+            }
+
+        </ul>
+    </div>
+    <div class="col-sm-9">
+        <header class="bg-dark rr">
+            <div class="ml-3 pt-3" style="padding:0.7%">
+                <h3 class=" text-white">Select your Favorite Topic to Read</h3>
+            </div>
+        </header>
+        <style>
+            .boxi {
+                transition: box-shadow .3s;
+                cursor: pointer;
+            }
+
+                .boxi:hover {
+                    box-shadow: 0 0 50px #808080;
+                }
+        </style>
+        <div class="mt-3">
+            <div class="row">
+                @foreach (var gen in Model.catlist.catlist)
+                {
+                    <div style="cursor:pointer" 
+                          onclick="location.href='@Url.Action("CategoryAll", "Home",new { cat=gen.cat})'"
+                         class="boxi card m-2 bg-secondary border-0 br pt-3">
+                        <div class="card-body shadow br">
+                            <h3 class="card-title">@gen.cat</h3>
+
+                        </div>
+                    </div>
+                    @*<div class="cardO 1" onclick="location.href='@Url.Action("CategoryAll", "Home",new { cat=gen.cat})'">
+                    <div class="card_image"> <img  src="@Url.Content(gen.link)" /> </div>
+                            <div class="card_title title-white">
+                                @gen.cat
+                            </div>
+                        </div>*@
+
+
+                }
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="mob">
+    <div class="d-inline-block mb-4 ml-2">
+        <a style="font-size:3vh" class="text-lowercase pr-4" href="/">
+            <img src="https://img.icons8.com/ios-filled/80/000000/dolphin.png">
+        </a>
+        <h3 class="d-inline-block mt-3 text-lowercase">blog <kbd>phins</kbd></h3>
+    </div>
+    <header class="bg-dark rr">
+        <div class=" p-3">
+            <h5 class="text-white">Select you Favorite Topic to Read</h5>
+        </div>
+    </header>
+    <div class="mt-3 ml-3 row text-center col-12 align-center container ">
+
+        @foreach (var gen in Model.catlist.catlist)
+        {
+
+        <div class="mt-3 m-1 col-sm-5  col-md-5 col-5 d-block pt-2 bg-secondary shadow br text-center text-break " onclick="location.href='@Url.Action("CategoryAll", "Home",new { cat=gen.cat})'">
+            @*
+           <a class="d-block mb-4 h-100">
+            <img class="rr shadow img-fluid img-thumbnail" src="@Url.Content(gen.link)" alt="">
+
+        </a>
+            *@
+            <h5 class="text-center">@gen.cat</h5>
+        </div>
+        }
+
+    </div>
+</div>

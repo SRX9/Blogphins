@@ -1,9 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "DeleteMicro - blogphins";
+    ViewBag.Title = "DeleteMicro | blogphins";
 }
 
-<div class="mob">
+<div class="mob ">
     <div class="mb-3">
         <a style="font-size:3vh" class="text-lowercase pr-3" href="/">
             <img src="https://img.icons8.com/ios-filled/60/000000/dolphin.png">
@@ -11,7 +11,7 @@
         <h4 class="d-inline-block mt-3 text-lowercase">blog <kbd>phins</kbd></h4>
     </div>
 </div>
-<div class="container jumbotron bg-secondary">
+<div class="container jumbotron br bg-secondary">
     <p style="font-size:2vh" class="text-secondary text-capitalize">Delete MicroBlog</p>
     <hr />
     @using (Html.BeginForm())
@@ -26,12 +26,11 @@
             Write your <span class="text-dark" style="
                     font-weight:900">Username</span> To Confirm Delete
         </p>
-        <input required type="text" class="form-control mb-3" name="confirm"
+        <input required type="text" class="br form-control mb-3" name="confirm"
                placeholder="Type your Username here" id="inputDefault">
         <input type="hidden" name="bid" value="@ViewBag.bid" />
         <p class="text-danger">@ViewBag.delete</p>
-        <hr />
-        <button type="submit" class="float-right btn btn-danger">Delete</button>
+        <button type="submit" class="float-right br btn btn-danger">Delete</button>
     }
 
 </div>

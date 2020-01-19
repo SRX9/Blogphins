@@ -127,27 +127,27 @@ namespace tlogNew.Controllers
                 var t = db.tag.Select(x => x).OrderByDescending(x=>x.id).Take(10000).
                     ToList();
 
-
-                var taglist = t.Select(e => e.tag).Distinct().ToList();
+                var taglist = t.Select(p => p.tag).Distinct();
+                
                 
 
                 int c;
-                for (int i=0;i<taglist.Count;i++)
+                foreach(var tt in taglist)
                 {
                     c = 0;
-                    for(int j=i;j<t.Count;j++)
+                    for(int j=0;j<t.Count;j++)
                     {
-                        if(t[i].tag==t[j].tag)
+                        if(tt==t[j].tag)
                         {
                             c++;
                         }
                     }
                     Trend newt = new Trend();
-                    newt.tag = t[i].tag;
+                    newt.tag = tt;
                     newt.count = c;
                     trends.Add(newt);
                 }
-
+               
                 m.tagtrend = trends.OrderByDescending(v=>v.count).ToList();
                 return View(m);
                 

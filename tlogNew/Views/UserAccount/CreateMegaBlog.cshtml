@@ -1,9 +1,9 @@
 ﻿@model tlogNew.Models.Megablog
 @{
 
-    ViewBag.Title = "Create MegaBlog";
+    ViewBag.Title = "Create MegaBlog | blogphins";
 }
-<div class="jumbotron container bg-secondary" >
+<div class="jumbotron container bg-secondary br shadow mt-3 full" >
     <h2><code style="color:black">Create</code> <kbd>MegaBlog</kbd></h2>
     <p>Maximum <b>20000</b> Characters Allowed.</p>
     <hr class="my-4">
@@ -14,7 +14,7 @@
         <div style="width:">
             <div style="display:inline-block;">
                 <h4>Title for MegaBlog</h4>
-                <input required maxlength="100" class="form-control"
+                <input required maxlength="100" class="br form-control"
                        style="width:300%"
                        name="title" type="text" placeholder="Write here">
 
@@ -26,7 +26,7 @@
 
             <div style="display:inline-block;float:right">
                 <h4>Blog Genre</h4>
-                <select  required class="custom-select" name="tag">
+                <select  required class="br custom-select" name="tag">
                     <option disabled value selected>Select Genre</option>
                     <option value="Information & Technology">Inforamtion & Technology</option>
                     <option value="Computer">Computer</option>
@@ -75,9 +75,9 @@
         <input type="hidden" name="time" value="@DateTime.Today.ToShortDateString()" />
 
         <div style="text-align:right;padding-top:15px;">
-            <button type="submit" class="btn btn-primary ">
+            <button style="border-radius:50px" type="submit" class="btn btn-primary ">
             Post
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                <svg  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                      width="32" height="32"
                      viewBox="0 0 172 172"
                      style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M10.07813,10.16211l20.24024,65.08789h130.93164zM30.31836,86l-20.24024,65.0459l151.17188,-65.0459z"></path></g></g></svg>

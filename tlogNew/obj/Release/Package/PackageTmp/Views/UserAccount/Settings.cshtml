@@ -1,0 +1,96 @@
+﻿@model tlogNew.Models.User
+@{
+    ViewBag.Title = Model.username + " - blogphins";
+}
+<div class="mob jumbotron">
+    <div class="mb-3">
+        <a style="font-size:3vh" class="text-lowercase pr-3" href="/">
+            <img src="https://img.icons8.com/ios-filled/60/000000/dolphin.png">
+        </a>
+        <h4 class="d-inline-block mt-3 text-lowercase">blog <kbd>phins</kbd></h4>
+    </div>
+    <div class="row shadow">
+        <div class="col-4 bg-dark">
+            <a href="/UserAccount/Settings" class="text-white">
+                Edit Account Details
+            </a>
+        </div>
+        <div class="col-4 border border-secondary">
+            <a href="/UserAccount/ChangePassword" class=" ">
+                Change Password
+            </a>
+        </div>
+        <div class="col-4 border border-secondary ">
+            <a href="/UserAccount/Delete" class="">
+                Delete Account
+            </a>
+        </div>
+    </div>
+    <div class="col-12 bg-secondary br mt-4 ">
+        <p style="font-size:2vh" class="pt-2 text-secondary text-capitalize">Edit Account Details</p>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <p>Username</p>
+            <input required type="text" class="br form-control mb-3" value="@Model.username" name="username"
+                   placeholder="@Model.username" id="inputDefault">
+            <p>Email</p>
+            <input required type="email" class="br form-control mb-3" name="email"
+                   value="@Model.email"
+                   placeholder="@Model.email" id="inputDefault">
+            <p>Bio</p>
+            <input required type="text"
+                   value="@Model.bio"
+                   class="form-control mb-3 br" name="bio"
+                   placeholder="@Model.bio" id="inputDefault">
+            <hr />
+            <button type="submit" class="br float-right btn btn-primary">Update</button>
+        }
+        <p class="text-success">@ViewBag.update</p>
+    </div>
+</div>
+    <div class="jumbotron full bg-light container ">
+
+        <div class="row">
+            <div class="col-4">
+                <h4 class="mb-3 text-dark">Account Settings</h4>
+                <div class="list-group">
+                    <a href="/UserAccount/Settings" class="list-group-item list-group-item-action active">
+                        Edit Account Details
+                    </a>
+                    <a href="/UserAccount/ChangePassword" class="list-group-item list-group-item-action   ">
+                        Change Password
+                    </a>
+                    <a href="/UserAccount/Delete" " class="list-group-item list-group-item-action">
+                        Delete Account
+                    </a>
+                </div>
+            </div>
+            <div class="col-6 ">
+                <p style="font-size:2vh" class="text-secondary text-capitalize">Edit Account Details</p>
+                <hr />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <p>Username</p>
+                    <input required type="text" class="br form-control mb-3" value="@Model.username" name="username"
+                           placeholder="@Model.username" id="inputDefault">
+                    <p>Email</p>
+                    <input required type="email" class="br form-control mb-3" name="email"
+                           value="@Model.email"
+                           placeholder="@Model.email" id="inputDefault">
+                    <p>Bio</p>
+                    <input required type="text"
+                           value="@Model.bio"
+                           class="br form-control mb-3" name="bio"
+                           placeholder="@Model.bio" id="inputDefault">
+                    <hr />
+                    <button type="submit" class="br float-right btn btn-primary">Update</button>
+                }
+                <p class="text-success">@ViewBag.update</p>
+            </div>
+        </div>
+
+    </div>
+

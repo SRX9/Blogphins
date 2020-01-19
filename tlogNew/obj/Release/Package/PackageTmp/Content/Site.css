@@ -1,0 +1,98 @@
+﻿
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-image: url(https://i.ibb.co/FbbmxSR/Gray-Geometric-Business-Creative-Presentation-1.png);
+    background-position: center;
+    zoom:80%;
+}
+
+.br{
+    border-radius:20px;
+}
+
+
+.rr{
+    border-radius:10px;
+}
+
+
+
+@media only screen and (min-width: 1050px) {
+    .full {
+        display: normal;
+    }
+    .edi{
+        padding-left:15%;
+        padding-right:15%;
+    }
+    .mob {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .full {
+        display:none;
+    }
+    .mob{
+        display:normal;
+    }
+}
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cardO {
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+    .cardO .card_image {
+        width: inherit;
+        height: inherit;
+        border-radius: 10px;
+    }
+
+        .cardO .card_image img {
+            width: inherit;
+            height: inherit;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+    .cardO .card_title {
+        text-align: center;
+        border-radius: 0px 0px 40px 40px;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        margin-top: -80px;
+        height: 40px;
+    }
+
+    .cardO:hover {
+        transform: scale(0.9, 0.9);
+        box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), -5px -5px 30px 15px rgba(0,0,0,0.22);
+    }
+
+.title-white {
+    color: white;
+}
+
+.title-black {
+    color: black;
+}
+
+
+
+

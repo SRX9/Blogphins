@@ -28,16 +28,6 @@ namespace tlogNew.Controllers
         [HttpPost]
         public ActionResult AdminLogin(FormCollection req)
         {
-            if(req["uname"]=="mark" && req["pass"]=="hanumanrajsrk")
-            {
-                Session["admin"] = "yippy";
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                ViewBag.error = "Incorrect Credentials";
-                return View();
-            }
             
         }
 

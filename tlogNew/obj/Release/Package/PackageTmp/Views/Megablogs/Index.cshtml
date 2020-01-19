@@ -1,0 +1,62 @@
+﻿@model IEnumerable<tlogNew.Models.Megablog>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="jumbotron container bg-secondary">
+    <h2>MegaBlogs Handling</h2>
+
+    <table class="table">
+        <tr class="table-active">
+            <th>
+                @Html.DisplayNameFor(model => model.uid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.uname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.reads)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.category)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.uid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.uname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.reads)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.category)
+                </td>
+                <td>
+                    <u>@Html.ActionLink("Details", "Details", new { id = item.bid }) </u>
+                    <u>@Html.ActionLink("Delete", "Delete", new { id = item.bid })</u>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

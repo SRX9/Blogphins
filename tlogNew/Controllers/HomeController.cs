@@ -24,9 +24,9 @@ namespace tlogNew.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            
 
-            return View();
+            return RedirectToAction("Index");
         }
 
         public ActionResult Browse()
@@ -79,26 +79,27 @@ namespace tlogNew.Controllers
                 var t = db.tag.Select(x => x).OrderByDescending(x => x.id).Take(10000).
                     ToList();
 
+                var taglist = t.Select(p => p.tag).Distinct();
 
-                var taglist = t.Select(e => e.tag).Distinct().ToList();
 
 
                 int c;
-                for (int i = 0; i < taglist.Count; i++)
+                foreach (var tt in taglist)
                 {
                     c = 0;
-                    for (int j = i; j < t.Count; j++)
+                    for (int j = 0; j < t.Count; j++)
                     {
-                        if (t[i].tag == t[j].tag)
+                        if (tt == t[j].tag)
                         {
                             c++;
                         }
                     }
                     Trend newt = new Trend();
-                    newt.tag = t[i].tag;
+                    newt.tag = tt;
                     newt.count = c;
                     trends.Add(newt);
                 }
+
                 m.tagtrend = trends.OrderByDescending(v => v.count).Take(50).ToList();
 
                 b.milist = m;
@@ -117,26 +118,27 @@ namespace tlogNew.Controllers
                 var t = db.tag.Select(x => x).OrderByDescending(x => x.id).Take(10000).
                     ToList();
 
+                var taglist = t.Select(p => p.tag).Distinct();
 
-                var taglist = t.Select(e => e.tag).Distinct().ToList();
 
 
                 int c;
-                for (int i = 0; i < taglist.Count; i++)
+                foreach (var tt in taglist)
                 {
                     c = 0;
-                    for (int j = i; j < t.Count; j++)
+                    for (int j = 0; j < t.Count; j++)
                     {
-                        if (t[i].tag == t[j].tag)
+                        if (tt == t[j].tag)
                         {
                             c++;
                         }
                     }
                     Trend newt = new Trend();
-                    newt.tag = t[i].tag;
+                    newt.tag = tt;
                     newt.count = c;
                     trends.Add(newt);
                 }
+
                 trends = trends.OrderByDescending(v => v.count).Take(50).ToList();
 
                 return View(trends);
@@ -190,7 +192,7 @@ namespace tlogNew.Controllers
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://localhost:3000/");
+                    client.BaseAddress = new Uri("https://markxblogphins.azurewebsites.net/");
 
                     var responseTask = client.GetAsync("search?q=" + Req["q"].ToString());
                     responseTask.Wait();

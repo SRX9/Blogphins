@@ -1,0 +1,255 @@
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\tlogNew.dll.config
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\tlogNew.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\tlogNew.pdb
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\csc.exe
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\csc.exe.config
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\csc.rsp
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\csi.exe
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\csi.exe.config
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\csi.rsp
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.AppContext.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Console.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.IO.Compression.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.IO.Pipes.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Security.Claims.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.ValueTuple.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Xml.XPath.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\vbc.exe
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\vbc.exe.config
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\vbc.rsp
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\VBCSCompiler.exe
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\Antlr3.Runtime.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\EntityFramework.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\EntityFramework.SqlServer.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\MaterialIcons.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\Newtonsoft.Json.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Net.Http.Formatting.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.Helpers.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.Mvc.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.Optimization.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.Razor.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.WebPages.Deployment.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.WebPages.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.WebPages.Razor.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\WebGrease.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\EntityFramework.xml
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\EntityFramework.SqlServer.xml
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Net.Http.Formatting.xml
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.Helpers.xml
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.Mvc.xml
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.Optimization.xml
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.Razor.xml
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.WebPages.xml
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.WebPages.Deployment.xml
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\System.Web.WebPages.Razor.xml
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\Newtonsoft.Json.xml
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\Antlr3.Runtime.pdb
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\obj\Release\tlogNew.csprojAssemblyReference.cache
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\obj\Release\tlogNew.csproj.CoreCompileInputs.cache
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\obj\Release\tlogNew.csproj.CopyComplete
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\obj\Release\tlogNew.dll
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\obj\Release\tlogNew.pdb
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\obj\Release\tlogNew.Migrations.InitialCreate.resources
+C:\Users\SRx\Desktop\New Mvc\tlogNew\tlogNew\obj\Release\tlogNew.csproj.GenerateResource.cache
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\tlogNew.dll.config
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\tlogNew.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\tlogNew.pdb
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\csc.exe
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\csc.exe.config
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\csc.rsp
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\csi.exe
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\csi.exe.config
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\csi.rsp
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.AppContext.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Console.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.IO.Compression.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.IO.Pipes.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.Claims.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.ValueTuple.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Xml.XPath.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\vbc.exe
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\vbc.exe.config
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\vbc.rsp
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\VBCSCompiler.exe
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Antlr3.Runtime.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\EntityFramework.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\EntityFramework.SqlServer.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\MaterialIcons.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Newtonsoft.Json.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Net.Http.Formatting.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Helpers.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Mvc.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Optimization.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Razor.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.WebPages.Deployment.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.WebPages.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.WebPages.Razor.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\WebGrease.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\EntityFramework.xml
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\EntityFramework.SqlServer.xml
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Net.Http.Formatting.xml
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Helpers.xml
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Mvc.xml
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Optimization.xml
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Razor.xml
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.WebPages.xml
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.WebPages.Deployment.xml
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.WebPages.Razor.xml
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Newtonsoft.Json.xml
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Antlr3.Runtime.pdb
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.csprojAssemblyReference.cache
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.Migrations.InitialCreate.resources
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.csproj.GenerateResource.cache
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.csproj.CoreCompileInputs.cache
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.csproj.CopyComplete
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.dll
+C:\Users\SRx\Desktop\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.pdb
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\tlogNew.dll.config
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\tlogNew.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\tlogNew.pdb
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\csc.exe
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\csc.exe.config
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\csc.rsp
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\csi.exe
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\csi.exe.config
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\csi.rsp
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.Managed.Core.targets
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.AppContext.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Collections.Immutable.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Console.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.IO.Compression.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.IO.FileSystem.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.IO.Pipes.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Reflection.Metadata.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.AccessControl.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.Claims.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Security.Principal.Windows.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.ValueTuple.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Xml.XmlDocument.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Xml.XPath.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\vbc.exe
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\vbc.exe.config
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\vbc.rsp
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\VBCSCompiler.exe
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\roslyn\VBCSCompiler.exe.config
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Antlr3.Runtime.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\EntityFramework.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\EntityFramework.SqlServer.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\MaterialIcons.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Microsoft.Web.Infrastructure.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Newtonsoft.Json.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Net.Http.Formatting.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Helpers.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Mvc.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Optimization.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Razor.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.WebPages.Deployment.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.WebPages.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.WebPages.Razor.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\WebGrease.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\EntityFramework.xml
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\EntityFramework.SqlServer.xml
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Net.Http.Formatting.xml
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Helpers.xml
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Mvc.xml
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Optimization.xml
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.Razor.xml
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.WebPages.xml
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.WebPages.Deployment.xml
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\System.Web.WebPages.Razor.xml
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Newtonsoft.Json.xml
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Antlr3.Runtime.pdb
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.csprojAssemblyReference.cache
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.Migrations.InitialCreate.resources
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.csproj.GenerateResource.cache
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.csproj.CoreCompileInputs.cache
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.csproj.CopyComplete
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.dll
+D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\tlogNew.pdb

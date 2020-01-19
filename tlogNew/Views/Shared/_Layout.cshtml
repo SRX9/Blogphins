@@ -2,14 +2,18 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    <link rel="shortcut icon" type="image/x-icon" href="https://img.icons8.com/metro/26/000000/dolphin.png" />
 
     <link href="~/Content/Site.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body class="jumbotron scrollbar" id="style-1">
+<body    class="jumbotron scrollbar" id="style-1">
 
     <style>
         #style-1::-webkit-scrollbar-track {
@@ -19,7 +23,7 @@
         }
 
         #style-1::-webkit-scrollbar {
-            width: 12px;
+            width: 0px;
             background-color: rgba(0,0,0,0.3);
         }
 
@@ -31,14 +35,16 @@
     </style>
 
     <nav style="margin-top:-2.7%; padding-left:15%;padding-right:15%;"
-         class="full sticky-top shadow navbar navbar-expand-lg  navbar-light bg-light">
+         class="full rr sticky-top shadow navbar navbar-expand-lg  navbar-light bg-light">
         <a style="font-size:3vh" class="text-lowercase " href="/">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                 width="50" height="50"
+                 width="60" height="60"
                  viewBox="0 0 172 172"
-                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#333333"><path d="M42.785,13.76c-6.06031,0.26875 -12.41625,2.15 -18.275,6.88c-2.87562,2.31125 26.59281,17.10594 23.9725,20.1025c-24.87281,28.4875 -23.95906,53.535 -24.725,80.195c-0.04031,1.42438 -0.73906,2.44563 -1.8275,3.225c-1.65281,1.1825 -21.6075,9.64813 -21.6075,30.745c0,1.90813 1.14219,3.44 1.935,3.44c2.0425,0 7.35031,-7.28312 11.0725,-8.7075c4.35375,-1.65281 5.44219,-0.48375 9.245,-0.7525c3.91031,-0.28219 5.61688,-2.10969 6.88,-3.225c0.83313,0.83313 4.31344,2.94281 5.6975,2.9025c4.60906,-0.13437 8.08938,-0.645 9.7825,-0.7525c4.1925,-0.28219 6.26188,2.99656 7.095,3.5475c2.17688,1.45125 2.60688,1.42438 2.9025,-0.43c1.76031,-11.08594 -6.59781,-20.15625 -14.2975,-25.2625c-1.42437,-0.94062 -1.10187,-2.41875 1.075,-6.665c16.56844,-32.42469 44.10188,-46.18469 48.6975,-47.4075c-2.78156,2.40531 -14.59312,16.50125 -13.115,17.2c24.85938,4.04469 36.45594,-13.84062 37.9475,-15.3725c2.33813,-2.43219 5.10625,-3.58781 8.385,-4.1925c5.2675,-0.9675 18.01969,-1.505 33.97,-1.3975c3.18469,-0.05375 11.42188,-0.41656 13.975,-2.6875c1.81406,-1.505 -0.08062,-3.27875 -2.15,-4.515c1.66625,-1.96187 3.27875,-3.02344 1.1825,-5.805c-0.95406,-1.26312 -3.95062,-3.87 -7.6325,-6.665c1.85438,-2.35156 -4.75687,-29.22656 -42.355,-31.605c-30.28812,-1.92156 -40.78281,4.8375 -45.15,5.375c-1.34375,0.16125 -2.84875,-0.24187 -4.1925,-0.645c-3.09062,-0.95406 -15.1575,-8.11625 -28.4875,-7.525zM137.6,48.16c1.89469,0 3.44,1.54531 3.44,3.44c0,1.89469 -1.54531,3.44 -3.44,3.44c-1.89469,0 -3.44,-1.54531 -3.44,-3.44c0,-1.89469 1.54531,-3.44 3.44,-3.44zM143.0825,71.38c-8.93594,0.17469 -15.56062,0.57781 -18.8125,1.1825c-1.14219,0.215 -2.10969,0.48375 -3.01,0.86c-2.09625,3.87 -3.89687,7.65938 -3.44,7.8475c12.05344,1.22281 20.77438,-4.17906 25.2625,-9.89z"></path></g></g></svg> <code>Blog<kbd>phins</kbd></code>
+                 class="pr-3"
+                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#333333"><path d="M42.785,13.76c-6.06031,0.26875 -12.41625,2.15 -18.275,6.88c-2.87562,2.31125 26.59281,17.10594 23.9725,20.1025c-24.87281,28.4875 -23.95906,53.535 -24.725,80.195c-0.04031,1.42438 -0.73906,2.44563 -1.8275,3.225c-1.65281,1.1825 -21.6075,9.64813 -21.6075,30.745c0,1.90813 1.14219,3.44 1.935,3.44c2.0425,0 7.35031,-7.28312 11.0725,-8.7075c4.35375,-1.65281 5.44219,-0.48375 9.245,-0.7525c3.91031,-0.28219 5.61688,-2.10969 6.88,-3.225c0.83313,0.83313 4.31344,2.94281 5.6975,2.9025c4.60906,-0.13437 8.08938,-0.645 9.7825,-0.7525c4.1925,-0.28219 6.26188,2.99656 7.095,3.5475c2.17688,1.45125 2.60688,1.42438 2.9025,-0.43c1.76031,-11.08594 -6.59781,-20.15625 -14.2975,-25.2625c-1.42437,-0.94062 -1.10187,-2.41875 1.075,-6.665c16.56844,-32.42469 44.10188,-46.18469 48.6975,-47.4075c-2.78156,2.40531 -14.59312,16.50125 -13.115,17.2c24.85938,4.04469 36.45594,-13.84062 37.9475,-15.3725c2.33813,-2.43219 5.10625,-3.58781 8.385,-4.1925c5.2675,-0.9675 18.01969,-1.505 33.97,-1.3975c3.18469,-0.05375 11.42188,-0.41656 13.975,-2.6875c1.81406,-1.505 -0.08062,-3.27875 -2.15,-4.515c1.66625,-1.96187 3.27875,-3.02344 1.1825,-5.805c-0.95406,-1.26312 -3.95062,-3.87 -7.6325,-6.665c1.85438,-2.35156 -4.75687,-29.22656 -42.355,-31.605c-30.28812,-1.92156 -40.78281,4.8375 -45.15,5.375c-1.34375,0.16125 -2.84875,-0.24187 -4.1925,-0.645c-3.09062,-0.95406 -15.1575,-8.11625 -28.4875,-7.525zM137.6,48.16c1.89469,0 3.44,1.54531 3.44,3.44c0,1.89469 -1.54531,3.44 -3.44,3.44c-1.89469,0 -3.44,-1.54531 -3.44,-3.44c0,-1.89469 1.54531,-3.44 3.44,-3.44zM143.0825,71.38c-8.93594,0.17469 -15.56062,0.57781 -18.8125,1.1825c-1.14219,0.215 -2.10969,0.48375 -3.01,0.86c-2.09625,3.87 -3.89687,7.65938 -3.44,7.8475c12.05344,1.22281 20.77438,-4.17906 25.2625,-9.89z"></path></g></g></svg> 
         </a>
-        <div class="collapse navbar-collapse" style="padding-left:2.2%" id="navbarColor03">
+        
+        <div class="collapse pl-2 navbar-collapse" style="border-left:1px solid #bebebe" id="navbarColor03">
 
 
             @if (HttpContext.Current.Request.Url.AbsolutePath != "/Home/Search")
@@ -53,7 +59,7 @@
                                      viewBox="0 0 172 172"
                                      style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#666666"><path d="M64.5,14.33333c-27.6214,0 -50.16667,22.54527 -50.16667,50.16667c0,27.6214 22.54527,50.16667 50.16667,50.16667c12.52732,0 23.97256,-4.67249 32.7819,-12.31771l3.05143,3.05143v9.26628l40.03256,40.03256c3.95599,3.95599 10.37733,3.956 14.33333,0c3.956,-3.956 3.956,-10.37733 0,-14.33333l-40.03256,-40.03256h-9.26628l-3.05143,-3.05143c7.64521,-8.80934 12.31771,-20.25458 12.31771,-32.7819c0,-27.6214 -22.54527,-50.16667 -50.16667,-50.16667zM64.5,28.66667c19.87509,0 35.83333,15.95824 35.83333,35.83333c0,19.87509 -15.95825,35.83333 -35.83333,35.83333c-19.87509,0 -35.83333,-15.95825 -35.83333,-35.83333c0,-19.87509 15.95824,-35.83333 35.83333,-35.83333z"></path></g></g></svg>
                             </div>
-                            <input style="display:inline-block;width:25vw" name="q" class="form-control" type="text" placeholder="Search">
+                            <input style="display:inline-block;border-radius:20px;width:25vw" name="q" class="form-control" type="text" placeholder="Search">
                         </form>
                     </li>
                 </ul>
@@ -62,7 +68,7 @@
         <div class="float-right">
             @if (HttpContext.Current.Request.Url.AbsolutePath != "/Home/Browse")
             {
-                <button type="button"
+                <button type="button" style="border-radius:20px;"
                         onclick="location.href='@Url.Action("Browse", "Home")'"
                         class="btn btn-secondary">
                     Browse
@@ -71,7 +77,7 @@
 
             @if (Session["admin"] != null)
             {
-                <button type="button"
+                <button type="button" style="border-radius:20px;"
                         onclick="location.href='@Url.Action("LogoutAdmin", "Admin")'"
                         class="btn btn-primary"
                         style="border:2px solid black;">
@@ -83,16 +89,17 @@
                 if (Session["uid"] != null)
                 {
 
-
-                    <button style="font-weight:900;font-size:15px;"
-                            class="btn btn-outline-dark"
-                            onclick="location.href='@Url.Action("UserProfile", "UserAccount", new { uid = Session["uid"],uname=Session["uname"] })'">
-                        <b class="text-lowercase">@Session["uname"]</b>
-                    </button>
+                    <svg 
+                         onclick="location.href='@Url.Action("UserProfile", "UserAccount", new { uid = Session["uid"],uname=Session["uname"] })'"
+                         xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" ,
+                         width="45" height="55"
+                         viewBox="0 0 172 172"
+                         fill:#000000;"
+                         style="cursor:pointer"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#333333"><path d="M86,21.5c-17.7627,0 -32.25,14.4873 -32.25,32.25c0,17.7627 14.4873,32.25 32.25,32.25c17.7627,0 32.25,-14.4873 32.25,-32.25c0,-17.7627 -14.4873,-32.25 -32.25,-32.25zM86,86c-29.60449,0 -53.75,24.14551 -53.75,53.75h10.75c0,-23.80957 19.19043,-43 43,-43c23.80957,0 43,19.19043 43,43h10.75c0,-29.60449 -24.14551,-53.75 -53.75,-53.75zM86,32.25c11.92578,0 21.5,9.57422 21.5,21.5c0,11.92578 -9.57422,21.5 -21.5,21.5c-11.92578,0 -21.5,-9.57422 -21.5,-21.5c0,-11.92578 9.57422,-21.5 21.5,-21.5z"></path></g></g></svg>
                     <button type="button"
                             onclick="location.href='@Url.Action("Logout", "UserAccount")'"
                             class="btn btn-primary"
-                            style="border:2px solid black;">
+                            style="border:2px solid black;border-radius:20px;">
                         Logout
                     </button>
 
@@ -101,16 +108,18 @@
                 {
                     if (HttpContext.Current.Request.Url.AbsolutePath != "/UserAccount/Login")
                     {
+
                         <button onclick="location.href='@Url.Action("Login", "UserAccount")'"
-                                type="button" class="btn btn-secondary ">
+                                style="border-radius:20px;" type="button" class="btn btn-secondary ">
                             Login
+
                         </button>
                     }
 
                     if (HttpContext.Current.Request.Url.AbsolutePath != "/UserAccount/Register")
                     {
                         <button type="button"
-                                style="border:2.1px solid black"
+                                style="border-radius:50px;;border:2.1px solid black"
                                 onclick="location.href='@Url.Action("Register", "UserAccount")'"
                                 class="btn btn-primary ">
                             Create Account
@@ -126,25 +135,14 @@
 
 
     @RenderBody()
-    <div class="full bg-secondary shadow-lg fixed-bottom" style="padding:10px;bottom:0;text-align:right">
-        <div class="btn-group" role="group">
-            <button type="button" class="btn \"
-                    onclick="location.href='@Url.Action("About", "Home")'">
-                About
-            </button>
-            <button type="button" 
-                    onclick="location.href='@Url.Action("Privacy", "Home")'"
-                    class="btn">
-                Privacy Policy
-            </button>
-            <button type="button"
-                    onclick="location.href='@Url.Action("Contact", "Home")'"
-                    class="btn">
-                Support
-            </button>
-        </div>
+    <div class="full bg-secondary  fixed-bottom" style="padding:10px;bottom:0;text-align:right">
+       
+        
+        <span class="pr-3" style="cursor:pointer" onclick="location.href='@Url.Action("About", "Home",new { id=1})'">About</span>     2019 © blogphins.
+        
     </div>
-    <div class=" bg-secondary mob m-2 pb-2 shadow-lg fixed-bottom row" style="bottom:0;overflow-x:hidden">
+    <div class=" bg-secondary mob m-2 pb-2 shadow-lg fixed-bottom row" 
+         style="bottom:0;overflow-x:hidden;border-radius:40px">
 
         <div class="col-3 text-center mt-2" style="border-right:1px solid #bebebe">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"

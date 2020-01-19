@@ -7,8 +7,7 @@ namespace tlogNew.Models
     public class Model1 : DbContext
     {
 
-        public Model1()
-            : base("name=Model12")
+        public Model1(): base("blogConnectionString")
         {
         }
         public DbSet<User> user { get; set; }

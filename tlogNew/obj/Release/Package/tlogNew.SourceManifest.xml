@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\Package\PackageTmp" />
+  <setAcl path="D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\PROJECTS\MARKx\blogphins\WDDN_1920_blogphins_CE117_CE118_CE119\blogphins\tlogNew\tlogNew\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

@@ -1,6 +1,6 @@
 ﻿@{
 
-    ViewBag.Title = "Create MicroBlog";
+    ViewBag.Title = "Create MicroBlog | blogphins";
 }
 
 <style>
@@ -10,8 +10,8 @@
 </style>
 
 
-<div style="margin-bottom:-5.2%" class="full">
-    <div class="jumbotron bg-secondary container " >
+<div   class="full">
+    <div class="jumbotron full bg-secondary br shadow mt-3 container " >
 
         <h2><code style="color:black">Create</code> <kbd>MicroBlog</kbd></h2>
         <p>Maximum <b>250</b> Characters Allowed.</p>
@@ -20,16 +20,16 @@
         {
 
 
-            <div class="row">
+            <div class="row bg-secondary br" >
                 <div class="col-sm-8">
                     <h4>Title for MicroBlog</h4>
-                    <input required maxlength="250" class="form-control"
+                    <input required maxlength="250" class="br form-control"
                            name="title" type="text" placeholder="Write here">
 
                 </div>
                 <div class="col-sm-4">
                     <h4 style="font-weight:900"># TagName</h4>
-                    <input class="form-control"
+                    <input class="br form-control"
                            required
                            style=""
                            maxlength="30"
@@ -46,7 +46,7 @@
 
                 <h3><img style="text-align:right" src="https://img.icons8.com/pastel-glyph/50/000000/ball-point-pen.png"></h3>
                 <div class=" boxi">
-                    <textarea  id="micro" name="text"></textarea>
+                    <textarea class=""  id="micro" name="text"></textarea>
                 </div>
 
                 <h5 class="text-danger">@ViewBag.error</h5>
@@ -56,7 +56,7 @@
             <input type="hidden" name="time" value="@DateTime.Today.ToShortDateString()" />
 
             <div style="text-align:right;padding-top:15px;">
-                <button type="submit" class="btn btn-primary ">
+                <button style="border-radius:50px" type="submit" class=" btn btn-primary ">
                     Post
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                          width="32" height="32"
@@ -71,13 +71,6 @@
             <p class="text-info" style="font-weight:900">@ViewBag.post</p>
     </div>
 
-    <div class=" bg-dark" style="padding:10px;text-align:right">
-        <div class="btn-group" role="group" >
-            <button type="button" class="btn btn-dark">About</button>
-            <button type="button" class="btn btn-dark">Privacy Policy</button>
-            <button type="button" class="btn btn-dark">Support</button>
-        </div>
-    </div>
 
 </div>
 

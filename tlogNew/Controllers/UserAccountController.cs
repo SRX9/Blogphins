@@ -15,6 +15,8 @@ namespace tlogNew.Controllers
 {
     public class UserAccountController : Controller
     {
+        string nodeServer = "https://markxblogphins.azurewebsites.net/";
+
         //Index
         public ActionResult Index()
         {
@@ -48,50 +50,72 @@ namespace tlogNew.Controllers
             {
                 return RedirectToAction("UserProfile", "UserAccount", new { uid = Session["uid"] });
             }
-            using (Model1 db = new Model1())
+            try
             {
-                var err = db.user.FirstOrDefault(u => u.username == user.username);
-                if(err!=null)
+                using (Model1 db = new Model1())
                 {
-                    ViewBag.exists = "Username Already exists";
-                    return View();
-                }
-                else
-                {
-                    db.user.Add(user);
-                    db.SaveChanges();
-                    Session["uid"] = user.id;
-                    Session["uname"] = user.username;
-
-                    nodemicro obj = new nodemicro()
+                    var err = db.user.FirstOrDefault(u => u.username == user.username);
+                    if (err != null)
                     {
-                        title = user.username,
-                        id = 0,
-                        type = 1
-                    };
-
-                    using (HttpClient client = new HttpClient())
+                        ViewBag.exists = "Username Already exists";
+                        return View();
+                    }
+                    else
                     {
-                        client.BaseAddress = new Uri("http://localhost:3000/");
-                        var postTask = client.PostAsJsonAsync<nodemicro>("getSearchBuf", obj);
-                        postTask.Wait();
-
-                        var result = postTask.Result;
-                        if (result.IsSuccessStatusCode)
+                        var em = db.user.FirstOrDefault(u => u.email == user.email);
+                        if (em != null)
                         {
-                            return RedirectToAction("UserProfile", "UserAccount", new { uid = Session["uid"] });
+                            ViewBag.email = "Email already in Use";
+                            return View();
                         }
                         else
                         {
-                            ViewBag.post = "Sorry for technical fault." +
-                                "Try Again Later.";
-                            return View();
+
+                            db.user.Add(user);
+                            db.SaveChanges();
+                            Session["uid"] = user.id;
+                            Session["uname"] = user.username;
+
+                            nodemicro obj = new nodemicro()
+                            {
+                                title = user.username,
+                                id = 0,
+                                type = 1
+                            };
+
+                            using (HttpClient client = new HttpClient())
+                            {
+                                client.BaseAddress = new Uri(nodeServer);
+                                var postTask = client.PostAsJsonAsync<nodemicro>("getSearchBuf", obj);
+                                postTask.Wait();
+
+                                var result = postTask.Result;
+                                if (result.IsSuccessStatusCode)
+                                {
+                                    return RedirectToAction("UserProfile", "UserAccount", new { uid = Session["uid"] });
+                                }
+                                else
+                                {
+                                    ViewBag.post = "Sorry for technical fault." +
+                                        "Try Again Later.";
+                                    return View();
+                                }
+                            }
                         }
+
+
                     }
-                   
+
                 }
 
             }
+            catch(Exception e)
+            {
+                ViewBag.err = e.ToString();
+                return View();
+                //return RedirectToAction("Index", "Home");
+            }
+
 
         }
 
@@ -160,6 +184,8 @@ namespace tlogNew.Controllers
            
             using (Model1 db = new Model1())
             {
+
+
                     User usr = db.user.FirstOrDefault(u => u.id == uid);
                         
 
@@ -173,8 +199,30 @@ namespace tlogNew.Controllers
                     }
        
                     }
+
                     List<Microblog> microblog = db.microblog.Where(u => u.uid== usr.id).OrderByDescending(x=>x.time).Take(40).ToList();
                     List<Megablog> megablog = db.megablog.Where(u => u.uid == usr.id).OrderByDescending(x => x.time).Take(40).ToList();
+
+                    if(Session["month"]==null)
+                {
+                    int reads = 0;
+                    foreach (var i in microblog)
+                    {
+                        reads = reads + i.reads;
+                    }
+                    foreach (var i in megablog)
+                    {
+                        reads = reads + i.reads;
+                    }
+                    Session["month"] = "set";
+                    usr.readers = reads;
+                    db.SaveChanges();
+                }
+
+
+                
+                    
+
 
                     Both obj = new Both();
 
@@ -223,20 +271,56 @@ namespace tlogNew.Controllers
                 {
                     string id = Session["uid"].ToString();
 
-                    User usr = (from p in db.user
-                                where p.id.ToString() == id
-                                select p).SingleOrDefault();
+                    User usr = db.user.SingleOrDefault(u => u.id.ToString() == id);
+                    var oldu= usr.username;
+                    var newu= user.username;
                     if(user.bio!=usr.bio || user.username!=usr.username||user.email!=usr.email)
                     {
+
+                        if(user.username != usr.username)
+                        {
+                            db.microblog.Where(b => b.uid.ToString() == id).ToList().ForEach(a => a.uname = user.username);
+                            db.megablog.Where(b => b.uid.ToString() == id).ToList().ForEach(a => a.uname = user.username);
+                            db.tag.Where(b => b.uid.ToString() == id).ToList().ForEach(a => a.uname = user.username);
+                            db.category.Where(b => b.uid.ToString() == id).ToList().ForEach(a => a.uname = user.username);
+
+                            try
+                            {
+                                using (var client = new HttpClient())
+                                {
+                                    client.BaseAddress = new Uri(nodeServer);
+
+                                    var responseTask = client.GetAsync("up?old=" + oldu+"&new="+newu);
+                                    responseTask.Wait();
+
+                                    var result = responseTask.Result;
+                                    if (result.IsSuccessStatusCode)
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        ViewBag.update = "Server Error. Try Again Later.";
+                                        return View();
+                                    }
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                ViewBag.update = "Server Error. Try Again Later.";
+                                return View();
+                            }
+                        }
                         usr.username = user.username;
                         usr.email = user.email;
                         usr.bio = user.bio;
+
                         db.SaveChanges();
                         Session["uname"] = user.username;
                         ViewBag.update = "Updated Successfully";
                     }
 
-  
+                    
                     return View(usr);
                 }
 
@@ -355,9 +439,44 @@ namespace tlogNew.Controllers
                     else
                     {
                         var obj = db.user.Where(a => a.id.ToString() == id).Single();
-                        db.user.Remove(obj);
-                        db.SaveChanges();
-                        Session.Clear();
+                        /*
+                        List<Microblog> milist = db.microblog.Where(b => b.uid.ToString() == id).ToList();
+                        List<Megablog> melist = db.megablog.Where(b => b.uid.ToString() == id).ToList();
+                        List<Tag> taglist = db.tag.Where(t => t.uid.ToString() == id).ToList();
+                        List<Category> catlist = db.category.Where(t => t.uid.ToString() == id).ToList();
+                        */
+
+
+                        try
+                        {
+                            using (var client = new HttpClient())
+                            {
+                                client.BaseAddress = new Uri(nodeServer);
+
+                                var responseTask = client.GetAsync("del?title=" +obj.username.ToString());
+                                responseTask.Wait();
+
+                                var result = responseTask.Result;
+                                if (result.IsSuccessStatusCode)
+                                {
+
+                                }
+                                else
+                                {
+                                    ViewBag.Delete = "Server Error. Try Again Later.";
+                                    return View();
+                                }
+                            }
+                            db.user.Remove(obj);
+                            db.SaveChanges();
+                            Session.Clear();
+                        }
+                        catch (Exception e)
+                        {
+                            ViewBag.Delete = "Server Error. Try Again Later.";
+                            return View();
+                        }
+
                         return RedirectToAction("Index");
                     }
 
@@ -416,14 +535,44 @@ namespace tlogNew.Controllers
                         Tag tag = db.tag.Where(v => v.bid.ToString() == ii).FirstOrDefault();
                         if(tag==null)
                         {
-                            Tag tag1 = db.tag.Where(v => v.title==obj.title).FirstOrDefault();
+                            Tag tag1 = db.tag.Where(q => q.title==obj.title).FirstOrDefault();
                             db.tag.Remove(tag1);
                         }
                         else
                         {
                             db.tag.Remove(tag);
                         }
-                        
+
+                        try
+                        {
+                            using (var client = new HttpClient())
+                            {
+                                client.BaseAddress = new Uri(nodeServer);
+
+                                var responseTask = client.GetAsync("del?title=" + obj.title.ToString());
+                                responseTask.Wait();
+
+                                var result = responseTask.Result;
+                                if (result.IsSuccessStatusCode)
+                                {
+
+                                }
+                                else
+                                {
+                                    ViewBag.Delete = "Server Error. Try Again Later.";
+                                    return View();
+                                }
+                            }
+
+                        }
+                        catch (Exception e)
+                        {
+                            ViewBag.Delete = "Server Error. Try Again Later.";
+                            return View();
+                        }
+
+
+
                         db.microblog.Remove(obj);
                         
                         db.SaveChanges();
@@ -490,6 +639,33 @@ namespace tlogNew.Controllers
                         else
                         {
                             db.category.Remove(cat);
+                        }
+                        try
+                        {
+                            using (var client = new HttpClient())
+                            {
+                                client.BaseAddress = new Uri(nodeServer);
+
+                                var responseTask = client.GetAsync("del?title=" + obj.title.ToString());
+                                responseTask.Wait();
+
+                                var result = responseTask.Result;
+                                if (result.IsSuccessStatusCode)
+                                {
+
+                                }
+                                else
+                                {
+                                    ViewBag.Delete = "Server Error. Try Again Later.";
+                                    return View();
+                                }
+                            }
+
+                        }
+                        catch (Exception e)
+                        {
+                            ViewBag.Delete = "Server Error. Try Again Later.";
+                            return View();
                         }
 
 
@@ -607,7 +783,7 @@ namespace tlogNew.Controllers
 
                             using (HttpClient client = new HttpClient())
                             {
-                                client.BaseAddress = new Uri("http://localhost:3000/");
+                                client.BaseAddress = new Uri(nodeServer);
                                 var postTask = client.PostAsJsonAsync<nodemicro>("getSearchBuf", obj);
                                 postTask.Wait();
 
@@ -633,8 +809,9 @@ namespace tlogNew.Controllers
                 catch(Exception e)
                 {
                     Console.WriteLine(e.ToString());
-                    ViewBag.error = "Sorry for technical fault." +
-                                        "Try Again Later.";
+                    ViewBag.error = e.ToString();
+                    //ewBag.error = "Sorry for technical fault." +
+                    //                "Try Again Later.";
                     return View();
                 }
 
@@ -667,90 +844,99 @@ namespace tlogNew.Controllers
         public ActionResult CreateMegaBlog(Microblog blog)
         {
             ViewBag.error = "";
-            if (Session["uid"] != null)
+            try
             {
-
-                try
+                if (Session["uid"] != null)
                 {
-                    if (Regex.Replace(blog.text, @"<[^>]+>|&nbsp;", "").Trim().Length > 20000)
+
+                    try
                     {
-                        ViewBag.display = "";
-                        ViewBag.error = "Maximum 20000 characters allowed in Megablog";
-                        return View();
-                    }
-                    else if (Regex.Replace(blog.text, @"<[^>]+>|&nbsp;", "").Trim().Length < 250)
-                    {
-                        ViewBag.display = "";
-                        ViewBag.error = "Minimum 250 characters required";
-                        return View();
-                    }
-
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.ToString());
-                    ViewBag.error = "Minimum 250 character required";
-                    return View();
-                }
-                using (Model1 db = new Model1())
-                {
-                    Megablog b = new Megablog();
-                    b.uid = blog.uid;
-                    b.uname = blog.uname;
-                    b.time = blog.time;
-                    b.text = blog.text;
-                    b.title = blog.title;
-                    b.reads = blog.reads;
-                    b.category= blog.tag;
-                    db.megablog.Add(b);
-                    db.SaveChanges();
-
-                    Megablog newB = db.megablog.FirstOrDefault(x => x.title == blog.title);
-                    Category c = new Category();
-                    c.tag = blog.tag;
-                    c.bid = newB.bid;
-                    c.uid = newB.uid;
-                    c.uname = newB.uname;
-                    c.title = newB.title;
-                    c.reads = newB.reads;
-                    db.category.Add(c);
-                    db.SaveChanges();
-
-                    nodemicro obj = new nodemicro()
-                    {
-                        title = blog.title,
-                        id = newB.bid,
-                        type = 3
-                    };
-
-                    using (HttpClient client = new HttpClient())
-                    {
-                        client.BaseAddress = new Uri("http://localhost:3000/");
-                        var postTask = client.PostAsJsonAsync<nodemicro>("getSearchBuf", obj);
-                        postTask.Wait();
-
-                        var result = postTask.Result;
-                        if (result.IsSuccessStatusCode)
+                        if (Regex.Replace(blog.text, @"<[^>]+>|&nbsp;", "").Trim().Length > 20000)
                         {
-                            return RedirectToAction("UserProfile", "UserAccount", new { uid = Session["uid"] });
-                        }
-                        else
-                        {
-                            ViewBag.post = "Sorry for technical fault." +
-                                "Try Again Later.";
+                            ViewBag.display = "";
+                            ViewBag.error = "Maximum 20000 characters allowed in Megablog";
                             return View();
                         }
+                        else if (Regex.Replace(blog.text, @"<[^>]+>|&nbsp;", "").Trim().Length < 250)
+                        {
+                            ViewBag.display = "";
+                            ViewBag.error = "Minimum 250 characters required";
+                            return View();
+                        }
+
                     }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.ToString());
+                        ViewBag.error = "Minimum 250 character required";
+                        return View();
+                    }
+                    using (Model1 db = new Model1())
+                    {
+                        Megablog b = new Megablog();
+                        b.uid = blog.uid;
+                        b.uname = blog.uname;
+                        b.time = blog.time;
+                        b.text = blog.text;
+                        b.title = blog.title;
+                        b.reads = blog.reads;
+                        b.category = blog.tag;
+                        db.megablog.Add(b);
+                        db.SaveChanges();
+
+                        Megablog newB = db.megablog.FirstOrDefault(x => x.title == blog.title);
+                        Category c = new Category();
+                        c.tag = blog.tag;
+                        c.bid = newB.bid;
+                        c.uid = newB.uid;
+                        c.uname = newB.uname;
+                        c.title = newB.title;
+                        c.reads = newB.reads;
+                        db.category.Add(c);
+                        db.SaveChanges();
+
+                        nodemicro obj = new nodemicro()
+                        {
+                            title = blog.title,
+                            id = newB.bid,
+                            type = 3
+                        };
+
+                        using (HttpClient client = new HttpClient())
+                        {
+                            client.BaseAddress = new Uri(nodeServer);
+                            var postTask = client.PostAsJsonAsync<nodemicro>("getSearchBuf", obj);
+                            postTask.Wait();
+
+                            var result = postTask.Result;
+                            if (result.IsSuccessStatusCode)
+                            {
+                                return RedirectToAction("UserProfile", "UserAccount", new { uid = Session["uid"] });
+                            }
+                            else
+                            {
+                                ViewBag.post = "Sorry for technical fault." +
+                                    "Try Again Later.";
+                                return View();
+                            }
+                        }
+                    }
+
+
+
                 }
+                else
+                {
 
-                
-
-            }
-            else
+                    return RedirectToAction("Login");
+                }
+            }catch(Exception e)
             {
-
-                return RedirectToAction("Login");
+                ViewBag.post = "Sorry for technical fault." +
+                                    "Try Again Later.";
+                return View();
             }
+
         }
 
 

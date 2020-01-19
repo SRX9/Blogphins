@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="blogConnectionString-Web.config Connection String" description="blogConnectionString Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:blogphinsdbserver.database.windows.net,1433;Initial Catalog=BlophinsDB;Persist Security Info=False;User ID=mark;Password=hanumanrajsrk1999@.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\PROJECTS\\MARKx\\blogphins\\WDDN_1920_blogphins_CE117_CE118_CE119\\blogphins\\tlogNew\\tlogNew\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='blogConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

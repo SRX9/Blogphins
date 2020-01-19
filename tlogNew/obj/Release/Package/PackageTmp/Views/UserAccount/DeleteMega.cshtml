@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "DeleteMega | blogphins";
+}
+
+<div class="mob ">
+    <div class="mb-3">
+        <a style="font-size:3vh" class="text-lowercase pr-3" href="/">
+            <img src="https://img.icons8.com/ios-filled/60/000000/dolphin.png">
+        </a>
+        <h4 class="d-inline-block mt-3 text-lowercase">blog <kbd>phins</kbd></h4>
+    </div>
+</div>
+<div class=" container jumbotron br bg-secondary">
+    <p style="font-size:2vh" class="text-secondary text-capitalize">Delete MegaBlog</p>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <p class="text-warning " style="font-size:3vh
+                    ;font-weight:900">
+            Do you Really Want to
+            Delete your Megablog?
+        </p>
+        <p style="font-size:2vh">
+            Write your <span class="text-dark" style="
+                    font-weight:900">Username</span> To Confirm Delete
+        </p>
+        <input required type="text" class="br form-control mb-3" name="confirm"
+               placeholder="Type your Username here" id="inputDefault">
+        <input type="hidden" name="bid" value="@ViewBag.bid" />
+        <p class="text-danger">@ViewBag.delete</p>
+        <button type="submit" class="br float-right btn btn-danger">Delete</button>
+    }
+
+</div>
